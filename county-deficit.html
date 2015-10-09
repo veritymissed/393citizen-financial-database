@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="viewport" content="width=device-width, initial-scale = 0.3">
+    <title>393公民平台-各縣市政府財政資料查詢</title>
+    <meta name="description" content="393公民平台 - 各縣市政府財政資料查詢 - 在政見兌現和施政績效的壓力下，地方財政困窘、債台高築是各縣市首長面臨的一大挑戰，如何開源節流、增加地方建設及服務，在在考驗著各縣市首長的智慧。" />
+    <meta name="keywords" content="393 CITIZEN,參玖參公民平台,393公民平台,公共債務,歲入,自籌財源,歲出,社會福利,赤字,財政昏迷指數,稅賦改革建議書,財政健全方案" />
+    <meta name="og:description" content="依據政府決算資料，393公民平台整理出全臺各縣市政府的重要財政數據，包括人口、債務、收入、支出、財政昏迷指數，共五大類，便於大家查詢2011年~2013年，各縣市的財政狀況，了解縣市的主要收入有哪些？主要支出於什麼部分？收入夠不夠對應支出？" />
+    <meta property="og:title" content="393公民平台-各縣市政府財政資料查詢" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://event.393citizen.com/finance_data/index.html" />
+    <meta property="og:image" content="http://event.393citizen.com/finance_data/images/570428_finance_data20150324—02.png" />
+    <meta property="og:site_name" content="393公民平台-各縣市政府財政資料查詢" />
+    <!-- The bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link href='http://www.393citizen.com/upload/favicon.ico' rel='icon' type='image/x-icon' />
+    <link rel="shortcut icon" href="http://www.393citizen.com/upload/favicon.ico">
+    <link rel="apple-touch-icon" href="./images/512icon.jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!--  -->
+    <!-- Load the main CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style_2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ga-->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-48625153-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <style media="screen">
+        .bar_value_box {
+            padding: 10px 10px 10px 10px;
+            background-color: white;
+            border-color: #538285;
+            border-style: solid;
+            border-width: 2px 2px 2px 2px;
+            border-radius: 3px 3px 3px 3px;
+            display: inline-table;
+            z-index: 10;
+            opacity: 0.9;
+            position: absolute;
+            visibility: hidden;
+            top: 0px;
+            left: 0px;
+        }
+
+        .bar_value_box > p {
+            text-align: left;
+            font-weight: bolder;
+            margin: 0px 0px 2px 0px;
+        }
+
+        .bar_value_box > p > map {
+            font-size: 24px;
+        }
+
+        .bar_value_box > .box_sub {
+            text-align: left;
+            font-weight: bolder;
+            margin: 0px 0px 2px 0px;
+        }
+
+        .bar_value_box > .box_sub > map {
+            font-size: 15px;
+            color: #FD9F01;
+        }
+    </style>
+</head>
+
+<body class="bg_grey" style="padding: 0px ;font-family: 'Microsoft JhengHei';min-width: 1000px;" onload="onload()">
+    <div class="bg_dark_blue container-fluid" style="padding-top: 8px;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p class="text-center font_light_blue font_weight_800">393 公民平台 | 財政 <i>Public Finance</i></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <a href="http://event.393citizen.com/finance_data/">
+                    <p class="text-center font_white font_weight_800 font_2_em">台灣各縣市政府財政資料查詢</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="bg_blue" style="padding-top: 12px ;padding-bottom: 4px;">
+        <div class="container">
+            <ul style="margin-bottom: 5px;" class="row text-center">
+                <li class="inline-block font_white">年度：
+                    <select id="select_1">
+                        <option class="" value="NULL">請選擇</option>
+                        <option class="" value="2011">2011</option>
+                        <option class="" value="2012">2012</option>
+                        <option class="" value="2013">2013</option>
+                    </select>
+                </li>
+                <li class="inline-block font_white">項目：
+                    <select id="select_3">
+                        <option class="" value="NULL">請選擇</option>
+                        <option class="" value="debt">縣市債務資料</option>
+                        <option class="" value="revenue">縣市歲入資料</option>
+                        <option class="" value="expenditure">縣市歲出資料</option>
+                        <option class="" value="coma">縣市昏迷指數</option>
+                        <option class="" value="population">縣市人口資料</option>
+                        <option class="" value="deficit">縣市赤字資料</option>
+                    </select>
+                </li>
+                <li class="inline-block">
+                    <map onclick="query()" class="queryButton">查 詢</map>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row font_blue text-center" style="margin-top: 13px;">
+            <hr style="width: 140px;display: inline-block;border-color: #3c566a;border-width: 1px; border-style: groove;margin:0px 8px 10px 8px;">
+            <h3 class="font_weight_800 text-center year_area" style="display: none">2011年度</h3>
+            <h3 class="font_weight_800 text-center year_area" style="display: none">2012年度</h3>
+            <h3 class="font_weight_800 text-center year_area">2013年度</h3>
+            <hr style="width: 140px;display: inline-block;border-color: #3c566a;border-width: 1px; border-style: groove;margin:0px 8px 10px 8px;">
+        </div>
+        <div class="row font_red text-center">
+            <h2 style="font-weight: 900;">全台縣市歲入歲出賸餘資料</h2>
+        </div>
+        <h6 style="color: #3c566a;text-align:center;margin-top: 10px;">本資料為四捨五入至單位後結果</h6>
+    </div>
+
+    <div class="chart_div" style="width:980px;margin:auto auto;position: relative;">
+        <div class="text-center chart_area" style="height: 450px;display: none;">
+            <svg width="950" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2011"></g>
+                <g id="chart_2011"></g>
+            </svg>
+            <div class="bar_value_box" id="box_2011">
+                <p>歲入歲出賸餘資料</p>
+                <p>
+                    <map style="color: #B54D52"></map>&nbsp&nbsp億元</p>
+            </div>
+            <!-- <div class="bar_value_box" id="" style="display: inline-block;visibility: visible;left: 930px;top: 100px;width: 140px;">
+                <h5 style="text-align:left;">
+                    <strong>宜蘭縣</strong>
+                </h5>
+                <p>
+                    <map style="color: #B54D52">-1</map>&nbsp&nbsp億元</p>
+                <h5 style="text-align:left;">
+                    <strong>連江縣</strong>
+                </h5>
+                <p>
+                    <map style="color: #B54D52">~0</map>&nbsp&nbsp億元</p>
+            </div> -->
+        </div>
+        <div class="text-center chart_area" style="height: 450px;display: none;">
+            <svg width="950" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2012"></g>
+                <g id="chart_2012"></g>
+            </svg>
+            <div class="bar_value_box" id="box_2012">
+                <p>歲入歲出賸餘資料</p>
+                <p>
+                    <map style="color: #B54D52"></map>&nbsp&nbsp億元</p>
+            </div>
+            <!-- <div class="bar_value_box" id="" style="display: inline-block;visibility: visible;left: 430px;top: 50px;width: 90px;opacity: 0.7;">
+                <h5 style="text-align:left;">
+                    <strong>南投縣</strong>
+                </h5>
+                <p>
+                    <map style="color: #B54D52">-1</map>&nbsp&nbsp億元</p>
+            </div>
+            <div class="bar_value_box" id="" style="display: inline-block;visibility: visible;left: 787px;top: 229px;width: 82px;opacity: 0.6;">
+                <h5 style="text-align:left;">
+                    <strong>連江縣</strong>
+                </h5>
+                <p>
+                    <map style="color: #B54D52">~0</map>&nbsp&nbsp億元</p>
+            </div> -->
+        </div>
+        <div class="text-center chart_area" style="height: 450px;">
+            <svg width="950" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2013"></g>
+                <g id="chart_2013"></g>
+            </svg>
+            <div class="bar_value_box" id="box_2013">
+                <p>歲入歲出賸餘資料</p>
+                <p>
+                    <map style="color: #B54D52"></map>&nbsp&nbsp億元</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="text-center font_weight_800" style="padding: 20px 0px 20px 0px;">
+                <map style="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color: #d35a52"></div>赤字</map>
+                <map style="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color: #50938f"></div>賸餘</map>
+                <map class="font_blue" style="margin-left: 7px;margin-right: 7px;text-decoration: underline;cursor: pointer;" data-toggle="modal" data-target="#illu_test">
+                    <span title="" class="circleMark_2">i</span>&nbsp這是什麼
+                </map>
+            </div>
+        </div>
+    </div>
+    <footer class="row">
+        <div class="text-center fontBold" style="margin-top: 20px;margin-bottom: 15px;">
+            <a class="queryButton_2" href="http://www.393citizen.com/financial/Coma/" target="_blank">了解更多財政訊息...</a>
+        </div>
+        <div class="row" style="margin-top:0px;margin-bottom:15px;">
+            <div class="icons text-center">
+                <map style="margin-left: 16px;margin-right: 16px;">
+                    <a style="color: #55acee;" href="http://twitter.com/home/?status=http://event.393citizen.com/financial_test/county-coma.html" class="fa-3x fa fa-twitter" target="_blank">
+                    </a>
+                </map>
+                <map style="margin-left: 16px;margin-right: 16px;">
+                    <a style="color: #48649f;" href="http://www.facebook.com/sharer.php?u=http://event.393citizen.com/financial_test/county-coma.html" target="_blank" class="fa-3x fa fa-facebook-square">
+                    </a>
+                </map>
+                <map style="margin-left: 16px;margin-right: 16px;">
+                    <a style="color: #d73d32;" href="https://plus.google.com/share?url=http://event.393citizen.com/financial_test/county-coma.html" target="_blank" class="fa-3x fa fa-google-plus">
+                    </a>
+                </map>
+            </div>
+        </div>
+        <div class="text-center fontBold ">
+            <p class="fontBold font_black ">393公民平台. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="illu_test">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h6 class="modal-title">
+                        <map>&nbsp</map>
+                    </h6>
+                </div>
+                <div class="modal-body">
+                    <map>
+                        <h4>歲入歲出賸餘資料</h4>
+                        定義：歲出與歲入間之差額。此為決算審定數。
+                        <br><a href="http://ebas1.ebas.gov.tw/pxweb/Dialog/statfile9.asp" style="color: purple;" target="_blank">資料來源：縣市政府統計資料庫</a>
+                    </map>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+</body>
+<script type="text/javascript">
+    var yearArray = ['2011', '2012', '2013'];
+
+    function onload() {
+        var urlSearch = window.location.search;
+        var year_selected_user = urlSearch.slice(6, urlSearch.length);
+
+        var chart_title = document.getElementsByClassName('chart_div')[0];
+        // if (screen.width < 950 && screen.width >= 500) {
+        //     var each_year_chart = document.getElementsByClassName('each_year_chart');
+        //     for (var i = 0; i < each_year_chart.length; i++) {
+        //         each_year_chart[i].setAttribute("width", '500');
+        //     }
+        // } else if (screen.width < 500) {
+        //     var each_year_chart = document.getElementsByClassName('each_year_chart');
+        //     for (var i = 0; i < each_year_chart.length; i++) {
+        //         each_year_chart[i].setAttribute("width", '300');
+        //     }
+        // }
+        document.getElementById('select_1').value = '2013';
+        document.getElementById('select_3').value = 'deficit';
+
+        queryYear(year_selected_user);
+        if (urlSearch == '') {
+            queryYear('2013');
+        }
+    }
+
+    function queryYear(yearArg) {
+        var select_index = yearArray.indexOf(yearArg);
+        var yearArea = document.getElementsByClassName("year_area");
+        for (var i = 0; i < yearArea.length; i++) {
+            if (i == select_index) {
+                yearArea[i].style.display = "inline-block";
+            } else {
+                yearArea[i].style.display = "none";
+            }
+        }
+        var area = document.getElementsByClassName("chart_area");
+        for (var i = 0; i < area.length; i++) {
+            if (i == select_index) {
+                area[i].style.display = "block";
+            } else {
+                area[i].style.display = "none";
+            }
+        }
+        document.getElementById('select_1').value = yearArg;
+    }
+
+    function query() {
+        var year_selected_user = document.getElementById('select_1').value;
+        var item_selected_user = document.getElementById('select_3').value;
+        if (year_selected_user != "NULL" && item_selected_user != 'NULL') {
+            // console.log(year_selected_user + " " + item_selected_user);
+            var select_index = yearArray.indexOf(year_selected_user);
+            if (item_selected_user == 'deficit') {
+                queryYear(year_selected_user);
+            } else {
+                // window.location.assign('/county-' + item_selected_user + '.html?year=' + year_selected_user);
+                // window.location.assign(window.location.origin + '/financial_test/county-' + item_selected_user + '.html?year=' + year_selected_user);
+                // window.location.assign(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + '/financial_test/county-' + item_selected_user + '.html?year=' + year_selected_user);
+                window.location.assign(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + '/finance_data/county-' + item_selected_user + '.html?year=' + year_selected_user);
+
+            }
+        } else {
+            alert("請輸入完整選項");
+        }
+
+    }
+</script>
+
+<script type="text/javascript" src="./javascripts/svg_county_deficit.js"></script>
+
+</html>

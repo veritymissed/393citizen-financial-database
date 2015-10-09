@@ -1,0 +1,309 @@
+html {
+    width: 100%;
+}
+ul {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+a {
+    color: white;
+}
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+a:focus {
+    color: white;
+    text-decoration: none;
+}
+a.use {
+    color: black;
+    text-decoration: underline;
+}
+.bg_green {
+    background-color: #859E66;
+}
+.bg_red {
+    background-color: #B54D52;
+}
+.bg_deep_red {
+    background-color: #690502;
+}
+.bg_orange {
+    background-color: #D67547;
+}
+.bg_brown {
+    background-color: #FD9F01;
+}
+.bg_grey_box {
+    background-color: #CCCCCC;
+}
+.bg_grey {
+    background-color: #f1f3f3;
+}
+.bg_white {
+    background-color: #FFFFFF;
+}
+.bg_yellow {
+    background-color: #F8DB01;
+}
+.bg_grey_2 {
+    background-color: #979795;
+}
+.bg_dark_blue {
+    background-color: #538285;
+}
+.bg_blue {
+    background-color: #7dafa7;
+}
+
+/*font color*/
+
+.font_white {
+    color: white;
+}
+.font_black {
+    color: black;
+}
+.font_red {
+    color: #B54D52;
+}
+.font_white_2 {
+    color: #DEAB9A;
+}
+.font_2_em {
+    font-size: 2em;
+}
+.font_blue {
+    color: #3c566a;
+}
+.font_light_blue {
+    color: #b2dad2;
+}
+
+/*font size*/
+
+.font_size_25 {
+    font-size: 25px;
+}
+.outline_none {
+    outline: none;
+}
+
+/*font weight*/
+
+.font_weight_800 {
+    font-weight: 700;
+}
+
+/* The CSS */
+
+select {
+    padding: 3px 8px 4px 4px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    background: #FFFFFF;
+    color: #2B2B2B;
+    border-color: #CCCCCC;
+    -webkit-border-color: #CCCCCC;
+    -moz-border-color: #CCCCCC;
+    border-width: 2px;
+    -webkit-border-width: 2px;
+    -moz-border-width: 2px;
+    outline: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+select > option {
+    font-weight: bold;
+    padding: 0px 10px 0px 10px;
+    background-color: #eee;
+    -webkit-background-color: #eee;
+    -moz-background-color: #eee;
+    border-color: #eee;
+    -webkit-border-color: #eee;
+    -moz-border-color: #eee;
+}
+ul > li {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/**/
+
+.queryButton {
+    width: 150px;
+    background-color: #B54D52;
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border: 1px solid #B54D52;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-decoration: none;
+}
+.queryButton:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+.queryButton:active {
+    position: relative;
+    top: 1px;
+}
+
+/**/
+
+.queryButton_2 {
+    background-color: #a6b5b5;
+    border-radius: 23px 23px 23px 23px;
+    -moz-border-radius: 23px 23px 23px 23px;
+    -webkit-border-radius: 23px 23px 23px 23px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 36px;
+    padding-right: 36px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+.queryButton_2:hover {
+    opacity: 0.9;
+}
+
+/*View and display*/
+
+.hidden {
+    visibility: hidden;
+}
+.inline {
+    display: inline;
+}
+.inline-block {
+    display: inline-block;
+}
+
+/*circle*/
+
+.circle_1 {
+    border-radius: 9px 9px 9px 9px;
+    padding: 0px 10px 0px 7px;
+    display: inline;
+    z-index: 10;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+/*Router_window 連結不同項目的html*/
+
+
+/*每個output出的縣市方塊*/
+
+.output_window {
+    width: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.county_window {
+    margin: 0px 0px 0px 0px;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+/*用來放縣市小地圖的class標籤，自己設*/
+
+.county_window_img {
+    margin-bottom: 15px;
+    margin-left: 5px;
+    width: 55px;
+    height: 55px;
+}
+
+/**/
+
+.county_window_text {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.county_window_text_county_name_ch {
+    font-size: 17px;
+}
+.county_window_text_county_name_en {
+    font-size: 11px;
+}
+.value_window {
+    margin: 0px 0px 0px 0px;
+    padding-right: 10px;
+    padding-left: 25px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    border-bottom-style: dashed;
+    border-bottom-width: 2px;
+    border-bottom-color: #E6E8DB;
+}
+.value_window_value {
+    font-size: 23px;
+    font-weight: 900;
+}
+
+/*Circle*/
+
+.circleMark_2 {
+    background-color: #3c566a;
+    color: white;
+    padding: 1px 7px 1px 7px;
+    margin: 0px 3px 0px 3px;
+    height: 10px;
+    width: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.row {
+    /*     margin-left: 0px; */
+    margin-right: 0px;
+}
+.btn_index_chart {
+    background-color: #6B6B6B;
+    border-radius: 10px 10px 10px 10px;
+    padding: 2px 15px 2px 15px;
+    color: white;
+    margin: 3px 8px 3px 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn_index_chart:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+}
+.btn_index_chart_active {
+    background-color: #9B4D4D;
+    border-radius: 10px 10px 10px 10px;
+    padding: 2px 15px 2px 15px;
+    color: white;
+    margin: 3px 8px 3px 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.1s;
+}

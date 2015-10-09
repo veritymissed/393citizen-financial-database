@@ -1,0 +1,171 @@
+body {
+    background-color: #eee;
+    font-family:"微軟正黑體";
+}
+.mainContainer {
+    text-align: center;
+}
+.container_1 {
+    width:100%;
+    height: 800px;
+    /*background-color: red;*/
+}
+.selectType {
+    height: 100%;
+    width: 33%;
+    display: inline-block;
+    float: left;
+    background-color: green;
+}
+.type {
+    position: relative;
+    width:50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: black;
+}
+.typeButton {
+    background-color:#692ec2;
+    -webkit-border-top-left-radius:6px;
+    -moz-border-radius-topleft:6px;
+    border-top-left-radius:6px;
+    -webkit-border-top-right-radius:6px;
+    -moz-border-radius-topright:6px;
+    border-top-right-radius:6px;
+    -webkit-border-bottom-right-radius:6px;
+    -moz-border-radius-bottomright:6px;
+    border-bottom-right-radius:6px;
+    -webkit-border-bottom-left-radius:6px;
+    -moz-border-radius-bottomleft:6px;
+    border-bottom-left-radius:6px;
+    text-indent:0px;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:13px;
+    font-weight:bold;
+    font-style:normal;
+    height:60px;
+    line-height:60px;
+    width:80%;
+    text-decoration:none;
+    text-align:center;
+}
+.typeButton_two_line {
+    line-height:30px;
+}
+.typeButton:hover {
+    background-color:#3f1e8a;
+}
+.typeButton_active {
+    background-color: #2e7dc2;
+}
+.item {
+    width:50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: yellow;
+}
+/*下方為年份選擇器樣式*/
+ .selectYear {
+    height: 100%;
+    width: 10%;
+    display: inline-block;
+    float: left;
+    background-color: #AAAAAA;
+}
+.year {
+    position: relative;
+    width:100%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    padding-top: 15%;
+    padding-bottom: 8%;
+}
+.yearButton {
+    background-color:#692ec2;
+    -webkit-border-top-left-radius:6px;
+    -moz-border-radius-topleft:6px;
+    border-top-left-radius:6px;
+    -webkit-border-top-right-radius:6px;
+    -moz-border-radius-topright:6px;
+    border-top-right-radius:6px;
+    -webkit-border-bottom-right-radius:6px;
+    -moz-border-radius-bottomright:6px;
+    border-bottom-right-radius:6px;
+    -webkit-border-bottom-left-radius:6px;
+    -moz-border-radius-bottomleft:6px;
+    border-bottom-left-radius:6px;
+    text-indent:0px;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:13px;
+    font-weight:bold;
+    font-style:normal;
+    height:60px;
+    line-height:60px;
+    width:80%;
+    text-decoration:none;
+    text-align:center;
+}
+.yearButton_active {
+    background-color: #2e7dc2;
+}
+/**/
+
+/**/
+ .selectCounty {
+    position: relative;
+    height: 100%;
+    width: 57%;
+    display: inline-block;
+    float: left;
+    padding-top:2%;
+    padding-bottom: 2%;
+    background-color: white;
+}
+/**/
+
+/**/
+
+/**/
+
+/**/
+ .countyButton {
+    background-color:#0c6d70;
+    -webkit-border-top-left-radius:6px;
+    -moz-border-radius-topleft:6px;
+    border-top-left-radius:6px;
+    -webkit-border-top-right-radius:6px;
+    -moz-border-radius-topright:6px;
+    border-top-right-radius:6px;
+    -webkit-border-bottom-right-radius:6px;
+    -moz-border-radius-bottomright:6px;
+    border-bottom-right-radius:6px;
+    -webkit-border-bottom-left-radius:6px;
+    -moz-border-radius-bottomleft:6px;
+    border-bottom-left-radius:6px;
+    text-indent:0;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:13px;
+    font-weight:bold;
+    font-style:normal;
+    height:40px;
+    line-height:40px;
+    width:100px;
+    text-decoration:none;
+    text-align:center;
+}
+.countyButton_active {
+    background-color:#0c2338;
+}

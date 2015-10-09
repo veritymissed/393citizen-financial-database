@@ -1,0 +1,563 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="viewport" content="width=device-width, initial-scale = 0.3">
+    <title>393公民平台-各縣市政府財政資料查詢</title>
+    <meta name="description" content="393公民平台 - 各縣市政府財政資料查詢 - 在政見兌現和施政績效的壓力下，地方財政困窘、債台高築是各縣市首長面臨的一大挑戰，如何開源節流、增加地方建設及服務，在在考驗著各縣市首長的智慧。" />
+    <meta name="keywords" content="393 CITIZEN,參玖參公民平台,393公民平台,公共債務,歲入,自籌財源,歲出,社會福利,赤字,財政昏迷指數,稅賦改革建議書,財政健全方案" />
+    <meta name="og:description" content="依據政府決算資料，393公民平台整理出全臺各縣市政府的重要財政數據，包括人口、債務、收入、支出、財政昏迷指數，共五大類，便於大家查詢2011年~2013年，各縣市的財政狀況，了解縣市的主要收入有哪些？主要支出於什麼部分？收入夠不夠對應支出？" />
+    <meta property="og:title" content="393公民平台-各縣市政府財政資料查詢" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://event.393citizen.com/finance_data/index.html" />
+    <meta property="og:image" content="http://event.393citizen.com/finance_data/images/570428_finance_data20150324—02.png" />
+    <meta property="og:site_name" content="393公民平台-各縣市政府財政資料查詢" />
+    <!-- The bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link href='http://www.393citizen.com/upload/favicon.ico' rel='icon' type='image/x-icon' />
+    <link rel="shortcut icon" href="http://www.393citizen.com/upload/favicon.ico">
+    <link rel="apple-touch-icon" href="./images/512icon.jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!--  -->
+    <!-- Load the main CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style_2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Ga-->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-48625153-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <style media="screen">
+        .bar_value_box {
+            padding: 10px 10px 10px 10px;
+            background-color: white;
+            border-color: #538285;
+            border-style: solid;
+            border-width: 2px 2px 2px 2px;
+            border-radius: 3px 3px 3px 3px;
+            display: inline-table;
+            z-index: 10;
+            opacity: 0.9;
+            position: absolute;
+            visibility: hidden;
+            top: 0px;
+            left: 0px;
+        }
+
+        .bar_value_box > p {
+            text-align: left;
+            font-weight: bolder;
+            margin: 0px 0px 2px 0px;
+        }
+
+        .bar_value_box > p > map {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body ng-controller="debtController" class="bg_grey" style="padding: 0px ;font-family: 'Microsoft JhengHei';min-width: 1000px;" onload="onload()">
+    <div class="bg_dark_blue container-fluid" style="padding-top: 8px;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p class="text-center font_light_blue font_weight_800">393 公民平台 | 財政 <i>Public Finance</i></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <a href="http://event.393citizen.com/finance_data/">
+                    <p class="text-center font_white font_weight_800 font_2_em">台灣各縣市政府財政資料查詢</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="bg_blue" style="padding-top: 12px ;padding-bottom: 4px;">
+        <div class="container">
+            <ul style="margin-bottom: 5px;" class="row text-center">
+                <li class="inline-block font_white">年度：
+                    <select id="select_1">
+                        <option class="" value="NULL">請選擇</option>
+                        <option class="" value="2011">2011</option>
+                        <option class="" value="2012">2012</option>
+                        <option class="" value="2013">2013</option>
+                    </select>
+                </li>
+                <li class="inline-block font_white">項目：
+                    <select id="select_3">
+                        <option class="" value="NULL">請選擇</option>
+                        <option class="" value="debt">縣市債務資料</option>
+                        <option class="" value="revenue">縣市歲入資料</option>
+                        <option class="" value="expenditure">縣市歲出資料</option>
+                        <option class="" value="coma">縣市昏迷指數</option>
+                        <option class="" value="population">縣市人口資料</option>
+                        <option class="" value="deficit">縣市赤字資料</option>
+                    </select>
+                </li>
+                <li class="inline-block">
+                    <map onclick="query()" class="queryButton">查 詢</map>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row font_blue text-center" style="margin-top: 13px;">
+            <hr style="width: 140px;display: inline-block;border-color: #3c566a;border-width: 1px; border-style: groove;margin:0px 8px 10px 8px;">
+            <h3 class="font_weight_800 text-center year_area" style="display: none">2011年度</h3>
+            <h3 class="font_weight_800 text-center year_area" style="display: none">2012年度</h3>
+            <h3 class="font_weight_800 text-center year_area">2013年度</h3>
+            <hr style="width: 140px;display: inline-block;border-color: #3c566a;border-width: 1px; border-style: groove;margin:0px 8px 10px 8px;">
+        </div>
+        <div class="row font_red text-center" style="margin-bottom: 10px;">
+            <h2 style="font-weight: 900;">全台縣市歲入資料</h2>
+        </div>
+        <div class="row text-center">
+            <map class="btn_index_chart" onclick="changeItemTag(0)">歲入總表</map>
+            <map class="btn_index_chart" onclick="changeItemTag(1)">預、決算數比較</map>
+            <map class="btn_index_chart" onclick="changeItemTag(2)">自籌稅課實徵淨額</map>
+        </div>
+        <h6 style="color: #3c566a;text-align:center;margin-top: 23px;">本資料為四捨五入至單位後結果</h6>
+    </div>
+    <div class="chart_div" style="width:980px;margin:auto auto;position: relative;">
+        <div class="text-center chart_area" style="display: none;">
+            <svg width="900" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2011"></g>
+                <g id="chart_2011"></g>
+            </svg>
+            <div class="bar_value_box" id="box_2011">
+                <p>其他收入</p>
+                <p>
+                    <map style="color: #e6e1a5;"></map>&nbsp&nbsp億元</p>
+                <p>財產收入</p>
+                <p>
+                    <map style="color: #b4d5a5;"></map>&nbsp&nbsp億元</p>
+                <p>自籌稅課收入</p>
+                <p>
+                    <map style="color: #61afa7;"></map>&nbsp&nbsp億元</p>
+                <p>統籌分配稅收入</p>
+                <p>
+                    <map style="color: #4688a3"></map>&nbsp&nbsp億元</p>
+                <p>中央補助及協助收入</p>
+                <p>
+                    <map style="color: #236278;"></map>&nbsp&nbsp億元</p>
+            </div>
+        </div>
+        <div class="text-center chart_area" style="display: none;">
+            <svg width="900" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2012"></g>
+                <g id="chart_2012"></g>
+            </svg>
+            <div class="bar_value_box" id="box_2012">
+                <p>其他收入</p>
+                <p>
+                    <map style="color: #e6e1a5;"></map>&nbsp&nbsp億元</p>
+                <p>財產收入</p>
+                <p>
+                    <map style="color: #b4d5a5;"></map>&nbsp&nbsp億元</p>
+                <p>自籌稅課收入</p>
+                <p>
+                    <map style="color: #61afa7;"></map>&nbsp&nbsp億元</p>
+                <p>統籌分配稅收入</p>
+                <p>
+                    <map style="color: #4688a3"></map>&nbsp&nbsp億元</p>
+                <p>中央補助及協助收入</p>
+                <p>
+                    <map style="color: #236278;"></map>&nbsp&nbsp億元</p>
+            </div>
+        </div>
+        <div class="text-center chart_area">
+            <svg width="900" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2013"></g>
+                <g id="chart_2013"></g>
+            </svg>
+            <div class="bar_value_box" id="box_2013">
+                <p>其他收入</p>
+                <p>
+                    <map style="color: #e6e1a5;"></map>&nbsp&nbsp億元</p>
+                <p>財產收入</p>
+                <p>
+                    <map style="color: #b4d5a5;"></map>&nbsp&nbsp億元</p>
+                <p>自籌稅課收入</p>
+                <p>
+                    <map style="color: #61afa7;"></map>&nbsp&nbsp億元</p>
+                <p>統籌分配稅收入</p>
+                <p>
+                    <map style="color: #4688a3"></map>&nbsp&nbsp億元</p>
+                <p>中央補助及協助收入</p>
+                <p>
+                    <map style="color: #236278;"></map>&nbsp&nbsp億元</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart_div" style="width:980px;margin:auto auto;position: relative;">
+        <div class="text-center chart_area" style="display: none;">
+            <svg width="900" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2011_2"></g>
+                <g id="chart_2011_2"></g>
+            </svg>
+            <div class="bar_value_box" id="box_2_2011">
+                <p>歲入決算數</p>
+                <p>
+                    <map style="color: #97c8a4;"></map>&nbsp&nbsp億元</p>
+                <p>歲入預算數</p>
+                <p>
+                    <map style="color: #4688a3;"></map>&nbsp&nbsp億元</p>
+            </div>
+        </div>
+        <div class="text-center chart_area" style="display: none;">
+            <svg width="900" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2012_2"></g>
+                <g id="chart_2012_2"></g>
+            </svg>
+            <div class="bar_value_box" id="box_2_2012">
+                <p>歲入決算數</p>
+                <p>
+                    <map style="color: #97c8a4;"></map>&nbsp&nbsp億元</p>
+                <p>歲入預算數</p>
+                <p>
+                    <map style="color: #4688a3;"></map>&nbsp&nbsp億元</p>
+            </div>
+        </div>
+        <div class="text-center chart_area">
+            <svg width="900" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2013_2"></g>
+                <g id="chart_2013_2"></g>
+            </svg>
+            <div class="bar_value_box" id="box_2_2013">
+                <p>歲入決算數</p>
+                <p>
+                    <map style="color: #97c8a4;"></map>&nbsp&nbsp億元</p>
+                <p>歲入預算數</p>
+                <p>
+                    <map style="color: #4688a3;"></map>&nbsp&nbsp億元</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="chart_div" style="width:980px;margin:auto auto;position: relative;">
+        <div class="text-center chart_area" style="display: none;">
+            <svg width="900" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2011_3"></g>
+                <g id="chart_2011_3"></g>
+            </svg>
+            <div class="bar_value_box" id="box_3_2011">
+                <p>其他稅課</p>
+                <p>
+                    <map style="color: #abcf9b;"></map>&nbsp&nbsp億元</p>
+                <p>土增稅</p>
+                <p>
+                    <map style="color: #56a69d;"></map>&nbsp&nbsp億元</p>
+                <p>地價稅</p>
+                <p>
+                    <map style="color: #4688a3;"></map>&nbsp&nbsp億元</p>
+                <p>房屋稅</p>
+                <p>
+                    <map style="color: #20567d;"></map>&nbsp&nbsp億元</p>
+            </div>
+        </div>
+        <div class="text-center chart_area" style="display: none;">
+            <svg width="900" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2012_3"></g>
+                <g id="chart_2012_3"></g>
+            </svg>
+            <div class="bar_value_box" id="box_3_2012">
+                <p>其他稅課</p>
+                <p>
+                    <map style="color: #abcf9b;"></map>&nbsp&nbsp億元</p>
+                <p>土增稅</p>
+                <p>
+                    <map style="color: #56a69d;"></map>&nbsp&nbsp億元</p>
+                <p>地價稅</p>
+                <p>
+                    <map style="color: #4688a3;"></map>&nbsp&nbsp億元</p>
+                <p>房屋稅</p>
+                <p>
+                    <map style="color: #20567d;"></map>&nbsp&nbsp億元</p>
+            </div>
+        </div>
+        <div class="text-center chart_area">
+            <svg width="900" height="430" id="chart_svg" class="each_year_chart" style="z-index: 1;">
+                <g id="line_2013_3"></g>
+                <g id="chart_2013_3"></g>
+            </svg>
+            <div class="bar_value_box" id="box_3_2013">
+                <p>其他稅課</p>
+                <p>
+                    <map style="color: #abcf9b;"></map>&nbsp&nbsp億元</p>
+                <p>土增稅</p>
+                <p>
+                    <map style="color: #56a69d;"></map>&nbsp&nbsp億元</p>
+                <p>地價稅</p>
+                <p>
+                    <map style="color: #4688a3;"></map>&nbsp&nbsp億元</p>
+                <p>房屋稅</p>
+                <p>
+                    <map style="color: #20567d;"></map>&nbsp&nbsp億元</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart_div" style="height: 450px;position: relative;">
+        <h2 id="">FCUK3</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="illu_div text-center font_weight_800" style="padding: 20px 0px 20px 0px;">
+                <map style="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color:#236278;"></div>中央補助及協助收入</map>
+                <map style="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color:#4688a3;"></div>統籌分配稅收入</map>
+                <map style="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color:#61afa7;"></div>自籌稅課收入</map>
+                <map s;tyle="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color:#b4d5a5;"></div>財產收入</map>
+                <map style="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color:#e6e1a5;"></div>其他收入</map>
+                <map class="font_blue" style="margin-left: 7px;margin-right: 7px;text-decoration: underline;cursor: pointer;" data-toggle="modal" data-target="#illu_test">
+                    <span title="" class="circleMark_2">i</span>&nbsp這是什麼
+                </map>
+            </div>
+            <div class="illu_div text-center font_weight_800" style="padding: 20px 0px 20px 0px;">
+                <map style="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color:#4688a3;"></div>歲入預算數</map>
+                <map style="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color:#97c8a4;"></div>歲入決算數</map>
+                <map class="font_blue" style="margin-left: 7px;margin-right: 7px;text-decoration: underline;cursor: pointer;" data-toggle="modal" data-target="#illu_test">
+                    <span title="" class="circleMark_2">i</span>&nbsp這是什麼
+                </map>
+            </div>
+            <div class="illu_div text-center font_weight_800" style="padding: 20px 0px 20px 0px;">
+                <map style="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color:#20576d;"></div>房屋稅</map>
+                <map style="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color:#4688a3;"></div>地價稅</map>
+                <map s;tyle="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color:#56a69d;"></div>土增稅</map>
+                <map style="margin-left: 7px;margin-right: 7px;">
+                    <div class="circle_1" style="background-color:#abcf9b;"></div>其他稅課</map>
+                <map class="font_blue" style="margin-left: 7px;margin-right: 7px;text-decoration: underline;cursor: pointer;" data-toggle="modal" data-target="#illu_test">
+                    <span title="" class="circleMark_2">i</span>&nbsp這是什麼
+                </map>
+            </div>
+        </div>
+    </div>
+    <footer class="row">
+        <div class="text-center fontBold" style="margin-top: 20px;margin-bottom: 15px;">
+            <a class="queryButton_2" href="http://www.393citizen.com/financial/Coma/" target="_blank">了解更多財政訊息...</a>
+        </div>
+        <div class="row" style="margin-top:0px;margin-bottom:15px;">
+            <div class="icons text-center">
+                <map style="margin-left: 16px;margin-right: 16px;">
+                    <a style="color: #55acee;" href="http://twitter.com/home/?status=http://event.393citizen.com/financial_test/county-expenditure.html" class="fa-3x fa fa-twitter" target="_blank">
+                    </a>
+                </map>
+                <map style="margin-left: 16px;margin-right: 16px;">
+                    <a style="color: #48649f;" href="http://www.facebook.com/sharer.php?u=http://event.393citizen.com/financial_test/county-expenditure.html" target="_blank" class="fa-3x fa fa-facebook-square">
+                    </a>
+                </map>
+                <map style="margin-left: 16px;margin-right: 16px;">
+                    <a style="color: #d73d32;" href="https://plus.google.com/share?url=http://event.393citizen.com/financial_test/county-expenditure.html" target="_blank" class="fa-3x fa fa-google-plus">
+                    </a>
+                </map>
+            </div>
+        </div>
+        <div class="text-center">
+            <p class="fontBold font_black ">393公民平台. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="illu_test">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h6 class="modal-title">
+                        <map>&nbsp</map>
+                    </h6>
+                </div>
+                <div class="modal-body">
+                    <div class="illu_text">
+                        <h3>歲入總表</h3>
+                        <h5>中央補助及協助收入</h5>
+                        <h6>定義： 上級政府對下級政府之移轉稱為補助，反之則為協助。 此為決算審定數。
+                            <br><a href="http://ebas1.ebas.gov.tw/pxweb/Dialog/statfile9.asp" target="_blank" style="color: #B54D52">資料來源：縣市政府統計資料庫 </a>
+                        </h6>
+                        <h5>統籌分配稅收入</h5>
+                        <h6>定義： 稅課由中央統籌分配直轄市、縣（市）及鄉（鎮、市）之款項。 此為決算審定數。
+                            <br><a href="http://ebas1.ebas.gov.tw/pxweb/Dialog/statfile9.asp" target="_blank" style="color: #B54D52">資料來源：縣市政府統計資料庫 </a>
+                        </h6>
+                        <h5>自籌稅課收入</h5>
+                        <h6>
+                            定義： 包括遺產及贈與稅、菸酒稅、土地稅、房屋稅、使用牌照稅、契稅、印花稅、娛樂稅、特別稅課及統籌分配稅等收入。 此為決算審定數。
+                            <br><a href="http://ebas1.ebas.gov.tw/pxweb/Dialog/statfile9.asp" target="_blank" style="color: #B54D52">資料來源：縣市政府統計資料庫 </a>
+                        </h6>
+                        <h5>財產收入</h5>
+                        <h6>定義： 包含財產之孳息、售價及資本之收回等收入。 此為決算審定數。
+                            <br><a href="http://ebas1.ebas.gov.tw/pxweb/Dialog/statfile9.asp" target="_blank" style="color: #B54D52">資料來源：縣市政府統計資料庫 </a>
+                        </h6>
+                        <h5>其他收入</h5>
+                        <h6>定義：包括營業盈餘及事業收入、罰款及賠償收入、規費收入、捐獻與贈與收入及其他合法之收入等。此為決算審定數
+                            <br><a href="http://ebas1.ebas.gov.tw/pxweb/Dialog/statfile9.asp" target="_blank" style="color: #B54D52">資料來源：縣市政府統計資料庫 </a>
+                        </h6>
+                    </div>
+                    <div class="illu_text">
+                        <h3>預、決算數比較</h3>
+                        <h5>歲入決算數</h5>
+                        <h6>定義：其他合法之收入。此為決算審定數。
+                            <br><a href="http://ebas1.ebas.gov.tw/pxweb/Dialog/statfile9.asp" target="_blank" style="color: #B54D52">資料來源：縣市政府統計資料庫 </a>
+                        </h6>
+                        <h5>歲入預算數</h5>
+                        <h6>定義： 依預算法第六條規定稱歲入者，謂一個會計年度之一切收入。 自88下半年及89年度起不包括債務之舉借及以前年度歲計賸餘之移用。
+                            <br>資料來源：地方總決算審核報告
+                        </h6>
+                    </div>
+                    <div class="illu_text">
+                        <h3>自籌稅課實徵淨額</h3>
+                        <h5>房屋稅</h5>
+                        <h6>定義：以房屋為課徵對象，向房屋所有人徵收之財產稅。
+                            <br><a href="http://web02.mof.gov.tw/njswww/WebProxy.aspx?sys=100&funid=defjspf2" target="_blank" style="color: #B54D52">資料來源：財政統計資料庫 </a>
+                        </h6>
+                        <h5>地價稅</h5>
+                        <h6>定義：已規定地價之土地，除依規定課徵田賦者外，應課徵地價稅。
+                            <br><a href="http://web02.mof.gov.tw/njswww/WebProxy.aspx?sys=100&funid=defjspf2" target="_blank" style="color: #B54D52">資料來源：財政統計資料庫 </a>
+                        </h6>
+                        <h5>土增稅</h5>
+                        <h6>定義：已規定地價之土地，於土地所有權移轉時，應按其土地漲價總數額徵收土地增值稅。
+                            <br><a href="http://web02.mof.gov.tw/njswww/WebProxy.aspx?sys=100&funid=defjspf2" target="_blank" style="color: #B54D52">資料來源：財政統計資料庫 </a>
+                        </h6>
+                        <h5>其他稅課</h5>
+                        <h6>定義： 包括遺產及贈與稅、菸酒稅、使用牌照稅、契稅、印花稅、娛樂稅、特別稅課等收入。
+                            <br><a href="http://ebas1.ebas.gov.tw/pxweb/Dialog/statfile9.asp" target="_blank" style="color: #B54D52">資料來源：縣市政府統計資料庫 </a>
+                        </h6>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</body>
+<script type="text/javascript">
+    var yearArray = ['2011', '2012', '2013'];
+
+    function onload() {
+        // console.log(window.location);
+        var urlSearch = window.location.search;
+        var year_selected_user = urlSearch.slice(6, urlSearch.length);
+        var chart_title = document.getElementsByClassName('chart_div')[0];
+        // if (screen.width < 950 && screen.width >= 500) {
+        //     var each_year_chart = document.getElementsByClassName('each_year_chart');
+        //     for (var i = 0; i < each_year_chart.length; i++) {
+        //         each_year_chart[i].setAttribute("width", '500');
+        //     }
+        // } else if (screen.width < 500) {
+        //     var each_year_chart = document.getElementsByClassName('each_year_chart');
+        //     for (var i = 0; i < each_year_chart.length; i++) {
+        //         each_year_chart[i].setAttribute("width", '300');
+        //     }
+        // }
+        document.getElementById('select_1').value = '2013';
+        document.getElementById('select_3').value = 'revenue';
+
+        queryYear(year_selected_user);
+        if (urlSearch == '') {
+            queryYear('2013');
+        }
+        changeItemTag(0);
+    }
+
+    function queryYear(yearArg) {
+        var select_index = yearArray.indexOf(yearArg);
+        var yearArea = document.getElementsByClassName("year_area");
+        for (var i = 0; i < yearArea.length; i++) {
+            if (i == select_index || i % yearArray.length == select_index) {
+                yearArea[i].style.display = "inline-block";
+            } else {
+                yearArea[i].style.display = "none";
+            }
+        }
+        var area = document.getElementsByClassName("chart_area");
+        for (var i = 0; i < area.length; i++) {
+            if (i == select_index || i % yearArray.length == select_index) {
+                area[i].style.display = "block";
+            } else {
+                area[i].style.display = "none";
+            }
+        }
+        document.getElementById('select_1').value = yearArg;
+    }
+
+    function query() {
+        var year_selected_user = document.getElementById('select_1').value;
+        var item_selected_user = document.getElementById('select_3').value;
+        if (year_selected_user != "NULL" && item_selected_user != 'NULL') {
+            // console.log(year_selected_user + " " + item_selected_user);
+            var select_index = yearArray.indexOf(year_selected_user);
+            if (item_selected_user == 'revenue') {
+                queryYear(year_selected_user);
+            } else {
+                // window.location.assign(window.location.origin + '/county-' + item_selected_user + '.html?year=' + year_selected_user);
+                // window.location.assign(window.location.origin + '/financial_test/county-' + item_selected_user + '.html?year=' + year_selected_user);
+                // window.location.assign(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + '/financial_test/county-' + item_selected_user + '.html?year=' + year_selected_user);
+                // window.location.assign(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + '/finance_data/county-' + item_selected_user + '.html?year=' + year_selected_user);
+                window.location.assign(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + '/finance_data/county-' + item_selected_user + '.html?year=' + year_selected_user);
+
+            }
+        } else {
+            alert("請輸入完整選項");
+        }
+    }
+
+    function changeItemTag(selectedTab) {
+        var chart_divs = document.getElementsByClassName('chart_div');
+        for (var i = 0; i < chart_divs.length; i++) {
+            chart_divs[i].style.display = "none";
+        }
+        chart_divs[selectedTab].style.display = "block";
+
+        var item_btns = document.getElementsByClassName('btn_index_chart');
+        for (var i = 0; i < item_btns.length; i++) {
+            item_btns[i].style.backgroundColor = '#6B6B6B';
+        }
+        item_btns[selectedTab].style.backgroundColor = '#9B4D4D';
+
+        var illu_divs = document.getElementsByClassName('illu_div');
+        for (var i = 0; i < illu_divs.length; i++) {
+            illu_divs[i].style.display = "none";
+        }
+        illu_divs[selectedTab].style.display = "block";
+
+        var illu_texts = document.getElementsByClassName('illu_text');
+        for (var i = 0; i < illu_texts.length; i++) {
+            illu_texts[i].style.display = "none";
+        }
+        illu_texts[selectedTab].style.display = "block";
+    }
+</script>
+<script type="text/javascript" src="./javascripts/svg_county_revenue.js "></script>
+<script type="text/javascript" src="./javascripts/svg_county_revenue_2.js "></script>
+<script type="text/javascript" src="./javascripts/svg_county_revenue_3.js "></script>
+
+</html>
