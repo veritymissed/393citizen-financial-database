@@ -5,11 +5,11 @@ var county_public_debt_arr = [891.86, 2359.43, 737.99, 651.38, 2352.35, 258.75, 
 var county_hidden_debt_arr = [116.9243, 1465.0582, 23.155, 106.0264, 666.611, 132.3762, 23.8551, 117.0158, 89.8421, 82.0268, 15.5245, 42.312, 23.9179, 11.3216, 16.5472, 8.9532, 6.1512, 0.9915, 46.494, 3.7637, 0, 0];
 
 
-var county_revenue_supply_arr = [264, 259, 223, 230, 261, 144, 94, 74, 109, 178, 110, 125, 133, 185, 84, 101, 60, 79, 50, 54, 31, 26];
-var county_revenue_distributed_arr = [251, 340, 202, 165, 263, 121, 41, 38, 35, 74, 76, 65, 52, 68, 35, 34, 16, 33, 31, 24, 11, 3];
-var county_revenue_others_arr = [152.94, 247.59, 173.73, 49.85, 169.04, 84.89, 21.15, 36.50, 19.84, 38.68, 12.52, 16.53, 4.65, 14.90, 5.46, 8.98, 3.82, 15.50, 19.02, 6.91, 77.26, 2.42];
+var county_revenue_supply_arr = [291.97, 237.32, 134.59, 217.27, 234.34, 278.55, 93.30, 82.87, 109.39, 176.26, 123.28, 129.54, 124.60, 180.65, 87.05, 95.88, 53.92, 76.76, 50.22, 54.21, 30.30, 24.62];
+var county_revenue_distributed_arr = [271.95, 366.00, 138.69, 225.76, 181.27, 256.79, 32.54, 44.56, 42.99, 77.53, 64.33, 69.61, 52.37, 74.29, 30.91, 36.59, 16.94, 34.27, 29.89, 20.62, 11.70, 3.12];
+var county_revenue_others_arr = [142.67, 306.88, 42.49, 126.41, 51.20, 205.07, 23.49, 28.28, 16.03, 58.24, 14.67, 16.32, 9.95, 14.10, 5.77, 8.72, 3.77, 18.89, 18.32, 6.66, 67.83, 1.74];
 var county_revenue_self_raised_arr = [];
-var county_revenue_properties_arr = [93.44, 37.36, 11.66, 75.92, 62.56, 1.50, 6.08, 1.86, 18.30, 1.37, 0.68, 0.15, 1.42, 3.84, 0.69, 12.24, 1.54, 4.70, 1.37, 1.43, 1.50, 0.10];
+var county_revenue_properties_arr = [108.86, 218.97, 2.26, 10.72, 26.46, 59.20, 1.05, 12.54, 11.53, 1.57, 0.99, 2.70, 0.93, 5.49, 2.60, 2.07, 0.80, 3.79, 2.09, 1.33, 1.76, 0.08];
 var county_revenue_land_arr = [1092.70, 2208.63, 619.33, 400.17, 928.19, 639.63, 70.88, 121.42, 98.77, 189.06, 57.55, 122.83, 60.13, 95.83, 20.64, 43.14, 8.49, 90.43, 141.10, 70.74, 2.42, 0.52];
 var county_revenue_landRise_arr = [248.13, 189.73, 140.54, 54.13, 73.57, 130.55, 28.01, 31.71, 15.73, 27.66, 8.51, 9.55, 5.68, 11.82, 3.70, 9.81, 2.44, 9.13, 23.90, 5.99, 2.23, 0.04];
 var county_revenue_house_arr = [97.84, 119.76, 78.22, 48.35, 81.18, 65.92, 9.11, 13.13, 11.08, 26.75, 7.67, 14.71, 8.92, 11.40, 2.46, 4.75, 0.93, 7.20, 14.27, 5.87, 0.57, 0.06];
@@ -22,18 +22,18 @@ var county_revenue_budget_arr = [1337, 1567, 1056, 834, 1129, 591, 206, 246, 289
 
 
 // 歲入總表
-var county_expenditure_general_arr = [201.65, 128.59, 110.51, 130.47, 124.04, 50.75, 18.20, 18.96, 28.92, 30.10, 26.64, 21.63, 19.49, 32.94, 17.91, 19.80, 9.05, 22.20, 17.60, 14.26, 14.90, 4.38];
-var county_expenditure_economic_arr = [254.13, 202.63, 266.35, 119.01, 95.47, 80.95, 36.72, 38.83, 44.23, 56.77, 42.70, 45.38, 47.06, 46.01, 24.71, 34.71, 29.31, 25.70, 18.83, 12.63, 35.65, 15.67];
-var county_expenditure_edu_arr = [443.59, 631.89, 324.72, 280.49, 437.82, 242.84, 68.51, 72.44, 93.56, 155.21, 73.61, 84.88, 62.36, 112.71, 39.99, 53.02, 18.74, 46.37, 54.54, 33.55, 25.18, 6.68];
-var county_expenditure_fare_arr = [209.01, 401.19, 118.75, 94.77, 259.41, 66.75, 21.38, 26.55, 31.16, 48.48, 25.35, 38.92, 30.86, 40.33, 18.79, 18.70, 10.44, 20.80, 20.68, 11.93, 14.13, 2.20];
-var county_expenditure_retire_arr = [119.91, 48.41, 85.21, 41.98, 51.06, 51.50, 20.51, 18.92, 26.91, 43.98, 24.50, 28.10, 31.15, 40.65, 17.80, 18.97, 7.47, 16.71, 21.11, 14.48, 4.07, 0.29];
+var county_expenditure_general_arr = [197.72, 131.32, 57.09, 113.40, 88.90, 130.87, 17.99, 19.62, 31.85, 30.56, 22.44, 21.63, 25.80, 34.28, 26.08, 20.66, 9.60, 23.37, 20.05, 15.30, 17.45, 4.43];
+var county_expenditure_economic_arr = [284.90, 182.80, 83.63, 214.14, 133.48, 131.06, 19.46, 50.91, 49.36, 63.17, 41.93, 53.87, 36.87, 41.41, 17.82, 32.67, 20.98, 29.67, 19.59, 11.59, 34.67, 13.38];
+var county_expenditure_edu_arr = [475.44, 637.80, 281.37, 331.93, 278.21, 452.45, 80.05, 86.23, 85.19, 164.54, 72.88, 86.60, 64.59, 109.91, 40.80, 53.52, 19.56, 47.55, 58.48, 35.85, 25.69, 7.14];
+var county_expenditure_fare_arr = [212.73, 395.48, 72.54, 133.20, 94.65, 265.49, 22.96, 26.79, 27.50, 54.01, 25.73, 38.11, 30.77, 39.58, 18.97, 20.05, 10.88, 21.35, 20.68, 11.95, 15.16, 2.19];
+var county_expenditure_retire_arr = [121.00, 49.08, 49.05, 86.21, 36.85, 54.85, 20.75, 22.95, 27.76, 47.13, 25.53, 30.46, 33.19, 44.33, 18.33, 19.27, 7.32, 17.05, 20.19, 13.64, 4.52, 0.33];
 
 
-var county_coma_arr = [5.04, 5.47, 5.60, 3.95, 4.46, 5.59, 5.50, 5.23, 3.40, 3.59, 3.11, 3.98, 3.31, 3.72, 3.99, 3.84, 3.78, 3.68, 5.42, 4.53];
-var county_coma_cash_arr = [3.54, 3.53, 4.29, 3.15, 3.45, 4.65, 4.58, 4.72, 2.58, 4.04, 3.74, 4.49, 6.31, 4.17, 7.05, 2.38, 4.41, 3.11, 4.75, 5.16];
-var county_coma_budget_arr = [7.28, 7.98, 7.28, 6.20, 6.55, 6.67, 4.97, 6.05, 4.70, 4.08, 3.18, 3.67, 2.64, 2.80, 2.28, 3.86, 3.57, 4.39, 5.77, 3.83];
-var county_coma_longdebt_arr = [3.06, 3.23, 3.71, 3.56, 2.72, 5.16, 7.76, 1.69, 1.32, 3.12, 3.21, 3.26, 3.45, 6.23, 7.42, 5.13, 3.41, 3.00, 4.73, 4.66];
-var county_coma_long_arr = [6.80, 6.93, 6.76, 4.39, 5.03, 6.64, 3.89, 5.43, 3.15, 3.21, 1.58, 2.16, 1.23, 1.57, 0.72, 2.36, 0.68, 3.36, 6.31, 3.30];
+var county_coma_arr = [4.87, 6.67, 4.89, 4.94, 3.78, 4.09, 4.50, 4.52, 3.19, 4.53, 3.88, 3.86, 4.10, 4.19, 3.64, 3.12, 4.61, 3.58, 4.86, 5.10];
+var county_coma_cash_arr = [2.97, 6.04, 4.25, 3.35, 3.00, 2.75, 4.10, 4.54, 3.20, 5.02, 4.15, 4.20, 4.86, 6.05, 4.66, 3.04, 5.87, 2.72, 4.72, 5.75]
+var county_coma_budget_arr = [5.97, 7.96, 4.78, 5.36, 5.68, 6.24, 3.85, 4.85, 4.03, 3.46, 2.60, 3.17, 1.82, 1.58, 1.92, 2.97, 5.09, 3.46, 3.67, 2.46];
+var county_coma_longdebt_arr = [5.55, 4.43, 5.96, 6.30, 3.01, 3.69, 6.77, 3.68, 2.62, 5.49, 6.50, 5.65, 7.78, 5.76, 6.44, 4.78, 6.01, 5.62, 4.94, 8.23];
+var county_coma_long_arr = [6.90, 8.85, 5.20, 6.33, 4.21, 5.03, 3.65, 5.01, 2.90, 3.67, 2.02, 2.09, 1.18, 1.52, 0.54, 1.75, 0.24, 3.38, 6.21, 3.30];
 var coma_tag_name = ['腦死區', '重度葉克膜區', '中重度插管區', '中度加護病房', '普通病房', '追蹤觀察'];
 
 var county_total_population_arr = [395.49, 268.65, 270.17, 188.32, 277.99, 204.40, 45.85, 53.05, 56.56, 129.60, 51.72, 70.78, 52.92, 85.23, 22.48, 33.39, 10.04, 37.49, 42.85, 27.09, 12.07, 1.22]
@@ -136,7 +136,7 @@ function generateDebtChart(chartId, lineId, array1, array2) {
     }
 
 }
-generateDebtChart('chart_2013', 'line_2013', county_public_debt_arr, county_hidden_debt_arr);
+//generateDebtChart('chart_2013', 'line_2013', county_public_debt_arr, county_hidden_debt_arr);
 
 
 
@@ -234,7 +234,7 @@ generateChart_reveneue('chart_2_2013', 'line_2_2013', county_revenue_supply_arr,
 
 
 
-function generateExpenditureChart(chartId, lineId, array1, array2, array3, array4, array5) {
+function generateExpenditureChart(chartId, lineId, array1, array2, array3, array4, array5, countyNameArr) {
     var chart_2013 = document.getElementById(chartId);
     var line_2013 = document.getElementById(lineId);
     var num_grade = getHeadAndInterval_inputMultipleArray(array1, array2, array3, array4, array5).head;
@@ -246,8 +246,9 @@ function generateExpenditureChart(chartId, lineId, array1, array2, array3, array
     var chart_part_height = h_h * 0.78;
     var chart_part_head_height = 20;
 
+    // if (screen.width > 900) {
     var chart_part_height_unit = (chart_part_height - chart_part_head_height) / (num_grade * debt_distance);
-
+    // console.log(chart_part_height_unit);
 
     for (var i = 0; i <= num_grade; i++) {
         var lns = document.createElementNS(svgns, "path");
@@ -315,18 +316,186 @@ function generateExpenditureChart(chartId, lineId, array1, array2, array3, array
         tns.setAttribute("style", txt_sty_str);
         tns.setAttribute("class", 'rect' + i);
         tns.setAttribute("id", 'county_tag');
-        tns.textContent = county_name[i];
+        tns.textContent = countyNameArr[i];
         chart_2013.appendChild(tns);
     }
+    // } else if (screen.width < 500) {
+    //     chart_part_height = chart_part_height * 5 / 11;
+    //     var chart_part_height_unit = (chart_part_height - chart_part_head_height * 5 / 11) / (num_grade * debt_distance);
+    //     // console.log(chart_part_height_unit);
+    //
+    //     for (var i = 0; i <= num_grade; i++) {
+    //         var lns = document.createElementNS(svgns, "path");
+    //         lns.setAttribute("stroke", "#C7C7C7");
+    //         lns.setAttribute("stroke-width", "1");
+    //         var h = chart_part_height + 30 - i * debt_distance * chart_part_height_unit;
+    //         var d_str = 'M30 ' + h + ' H900';
+    //         lns.setAttribute('d', d_str);
+    //         line_2013.appendChild(lns);
+    //
+    //         var grade_tag = Math.round(i * debt_distance); //四捨五入做出左邊的級距取到整數位
+    //         // console.log(grade_tag);
+    //         var grdns = document.createElementNS(svgns, "text");
+    //         var txt_sty_str = 'font-size:13px;font-weight: bold;';
+    //         grdns.setAttribute("x", 0);
+    //         grdns.setAttribute("y", h);
+    //         grdns.setAttribute("fill", "#6B6B6B");
+    //         grdns.setAttribute("style", txt_sty_str);
+    //         grdns.textContent = grade_tag;
+    //         line_2013.appendChild(grdns);
+    //     }
+    //     var unitns = document.createElementNS(svgns, "text");
+    //     unitns.setAttribute("x", 0);
+    //     unitns.setAttribute("y", h - 12);
+    //     unitns.setAttribute("fill", "#6B6B6B");
+    //     unitns.setAttribute("style", txt_sty_str);
+    //     unitns.textContent = "元";
+    //     line_2013.appendChild(unitns);
+    //
+    //     for (var i = 0; i < county_revenue_decided_arr.length; i++) {
+    //         var value = [array1[i], array2[i], array3[i], array4[i], array5[i]];
+    //
+    //         value.forEach(function(_value, index, array) {
+    //             array[index] = array[index] * chart_part_height_unit;
+    //         });
+    //
+    //         var w = 8;
+    //         var H = [chart_part_height + 30 - value[0]];
+    //         value.forEach(function(element, index, array) {
+    //             if (index != 0)
+    //                 H[index] = (H[index - 1] - element);
+    //         });
+    //
+    //         var fill_color = ['#813d3e', '#b54c52', '#e27e33', '#f3ba33', '#f4e696'];
+    //
+    //         for (var j = 0; j < value.length; j++) {
+    //             var ins = document.createElementNS(svgns, "rect");
+    //             ins.setAttribute("x", i * 12 + 30);
+    //             ins.setAttribute("y", H[j]);
+    //             ins.setAttribute("width", w);
+    //             ins.setAttribute("height", value[j]);
+    //             ins.setAttribute("fill", fill_color[j]);
+    //             ins.setAttribute("stroke", "tranparent");
+    //             ins.setAttribute("class", 'rect' + i);
+    //             chart_2013.appendChild(ins);
+    //         }
+    //
+    //         var tns = document.createElementNS(svgns, "text");
+    //         var txt_sty_str = 'font-size:15px;font-weight: bold; writing-mode: tb;';
+    //         tns.setAttribute("x", (i * 12 + 30) + (w / 2));
+    //         tns.setAttribute("y", H[0] + value[0] + 8);
+    //         tns.setAttribute("fill", "#6B6B6B");
+    //         tns.setAttribute("style", txt_sty_str);
+    //         tns.textContent = county_name[i];
+    //         chart_2013.appendChild(tns);
+    //     }
+    // } else if (screen.width >= 500 && screen.width < 900) {
+    //     chart_part_height = chart_part_height * 2 / 3;
+    //     var chart_part_height_unit = (chart_part_height - chart_part_head_height * 2 / 3) / (num_grade * debt_distance);
+    //     // console.log(chart_part_height_unit);
+    //
+    //     for (var i = 0; i <= num_grade; i++) {
+    //         var lns = document.createElementNS(svgns, "path");
+    //         lns.setAttribute("stroke", "#C7C7C7");
+    //         lns.setAttribute("stroke-width", "1");
+    //         var h = chart_part_height + 30 - i * debt_distance * chart_part_height_unit;
+    //         var d_str = 'M30 ' + h + ' H900';
+    //         lns.setAttribute('d', d_str);
+    //         line_2013.appendChild(lns);
+    //
+    //         var grade_tag = Math.round(i * debt_distance); //四捨五入做出左邊的級距取到整數位
+    //         // console.log(grade_tag);
+    //         var grdns = document.createElementNS(svgns, "text");
+    //         var txt_sty_str = 'font-size:13px;font-weight: bold;';
+    //         grdns.setAttribute("x", 0);
+    //         grdns.setAttribute("y", h);
+    //         grdns.setAttribute("fill", "#6B6B6B");
+    //         grdns.setAttribute("style", txt_sty_str);
+    //         grdns.textContent = grade_tag;
+    //         line_2013.appendChild(grdns);
+    //     }
+    //     var unitns = document.createElementNS(svgns, "text");
+    //     unitns.setAttribute("x", 0);
+    //     unitns.setAttribute("y", h - 12);
+    //     unitns.setAttribute("fill", "#6B6B6B");
+    //     unitns.setAttribute("style", txt_sty_str);
+    //     unitns.textContent = "元";
+    //     line_2013.appendChild(unitns);
+    //
+    //     for (var i = 0; i < county_revenue_decided_arr.length; i++) {
+    //         var value = [array1[i], array2[i], array3[i], array4[i], array5[i]];
+    //
+    //         value.forEach(function(_value, index, array) {
+    //             array[index] = array[index] * chart_part_height_unit;
+    //         });
+    //
+    //         var w = 14;
+    //         var H = [chart_part_height + 30 - value[0]];
+    //         value.forEach(function(element, index, array) {
+    //             if (index != 0)
+    //                 H[index] = (H[index - 1] - element);
+    //         });
+    //
+    //         var fill_color = ['#813d3e', '#b54c52', '#e27e33', '#f3ba33', '#f4e696'];
+    //
+    //         for (var j = 0; j < value.length; j++) {
+    //             var ins = document.createElementNS(svgns, "rect");
+    //             ins.setAttribute("x", i * 20 + 40);
+    //             ins.setAttribute("y", H[j]);
+    //             ins.setAttribute("width", w);
+    //             ins.setAttribute("height", value[j]);
+    //             ins.setAttribute("fill", fill_color[j]);
+    //             ins.setAttribute("stroke", "tranparent");
+    //             ins.setAttribute("class", 'rect' + i);
+    //             chart_2013.appendChild(ins);
+    //         }
+    //
+    //         var tns = document.createElementNS(svgns, "text");
+    //         var txt_sty_str = 'font-size:15px;font-weight: bold; writing-mode: tb;';
+    //         tns.setAttribute("x", (i * 20 + 40) + (w / 2));
+    //         tns.setAttribute("y", H[0] + value[0] + 8);
+    //         tns.setAttribute("fill", "#6B6B6B");
+    //         tns.setAttribute("style", txt_sty_str);
+    //         tns.textContent = county_name[i];
+    //         chart_2013.appendChild(tns);
+    //     }
+    // }
+
+
+
+
+
+
+
+
+
 };
-generateExpenditureChart('chart_3_2013', 'line_3_2013', county_expenditure_general_arr, county_expenditure_economic_arr, county_expenditure_edu_arr, county_expenditure_fare_arr, county_expenditure_retire_arr);
+
+var county_expenditure = [1544.73, 1675.04, 627.60, 1048.69, 735.21, 1262.66, 197.72, 231.50, 264.56, 412.05, 216.92, 266.32, 219.10, 310.58, 142.13, 170.91, 83.76, 166.66, 168.48, 106.41, 114.12, 30.31];
+
+var county_expenditure_retireOthers_arr = [];
+county_expenditure.forEach(function(val, idx, arr) {
+    var others = val - county_expenditure_general_arr[idx] - county_expenditure_economic_arr[idx] - county_expenditure_edu_arr[idx] - county_expenditure_fare_arr[idx];
+    if (others >= 0)
+        county_expenditure_retireOthers_arr.push(others);
+    else
+        county_expenditure_retireOthers_arr.push(0);
+});
+generateExpenditureChart('chart_3_2013', 'line_3_2013', county_expenditure_general_arr, county_expenditure_economic_arr, county_expenditure_edu_arr, county_expenditure_fare_arr, county_expenditure_retireOthers_arr, county_name);
 
 function generateComaChart(chartId, rectId, lineId, year_coma_array) {
     var chart_2013 = document.getElementById(chartId);
     var rect_2013 = document.getElementById(rectId);
     var line_2013 = document.getElementById(lineId);
-    var num_grade = coma_getHeadAndInterval_inputMultipleArray(year_coma_array).head;
-    var debt_distance = coma_getHeadAndInterval_inputMultipleArray(year_coma_array).interval;
+
+    var year_coma_array_modified = [];
+    year_coma_array.forEach(function(val,idx,arr) {
+      if(val<6) year_coma_array_modified.push(val);
+      else year_coma_array_modified.push(5.99);
+    });
+
+    var num_grade = coma_getHeadAndInterval_inputMultipleArray(year_coma_array_modified).head;
+    var debt_distance = coma_getHeadAndInterval_inputMultipleArray(year_coma_array_modified).interval;
 
     // console.log(num_grade + " " + debt_distance);
     var h_h = parseFloat($('#chart_svg').attr('height'));
@@ -449,21 +618,21 @@ function generateComaChart(chartId, rectId, lineId, year_coma_array) {
 
     for (var i = 0; i < year_coma_array.length; i++) {
         var val;
-        var test = year_coma_array[i] - 4 * debt_distance;
+        var test = year_coma_array_modified[i] - 4 * debt_distance;
         if (test >= 2.5 || test < 3) {
-            val = (year_coma_array[i] - 4 * debt_distance - 4 * debt_distance + 2 * 4 * debt_distance) * chart_part_height_unit;
+            val = (year_coma_array_modified[i] - 4 * debt_distance - 4 * debt_distance + 2 * 4 * debt_distance) * chart_part_height_unit;
         } else if (test >= 2.0 || test < 2.5) {
-            val = (year_coma_array[i] - 4 * debt_distance - 3 * debt_distance + 2 * 3 * debt_distance) * chart_part_height_unit;
+            val = (year_coma_array_modified[i] - 4 * debt_distance - 3 * debt_distance + 2 * 3 * debt_distance) * chart_part_height_unit;
         } else if (test >= 1.5 || test < 2) {
-            val = (year_coma_array[i] - 4 * debt_distance - 2 * debt_distance + 2 * 2 * debt_distance) * chart_part_height_unit;
+            val = (year_coma_array_modified[i] - 4 * debt_distance - 2 * debt_distance + 2 * 2 * debt_distance) * chart_part_height_unit;
         } else if (test >= 1.0 || test < 1.5) {
-            val = (year_coma_array[i] - 4 * debt_distance - 1 * debt_distance + 2 * 1 * debt_distance) * chart_part_height_unit;
+            val = (year_coma_array_modified[i] - 4 * debt_distance - 1 * debt_distance + 2 * 1 * debt_distance) * chart_part_height_unit;
         } else {}
 
         var h = chart_part_height + 30 - val - 1 * debt_distance * chart_part_height_unit;
 
         var w = 20;
-        var fillColor = get_chart_bar_color(year_coma_array[i]);
+        var fillColor = get_chart_bar_color(year_coma_array_modified[i]);
 
         var ins = document.createElementNS(svgns, "rect");
         ins.setAttribute("x", i * 38 + 140);

@@ -88,14 +88,6 @@ function generateExpenditureChart(chartId, lineId, array1, array2, array3, array
     var chart_part_height = h_h * 0.78;
     var chart_part_head_height = 20;
 
-
-
-
-
-
-
-
-
     // if (screen.width > 900) {
     var chart_part_height_unit = (chart_part_height - chart_part_head_height) / (num_grade * debt_distance);
     // console.log(chart_part_height_unit);
