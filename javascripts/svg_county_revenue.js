@@ -1,11 +1,19 @@
-var county_name = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+var county_name = ['新北市', '台北市', '桃園市', '台中市', '台南市', '高雄市', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+var county_name_before_2014 = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+
+var county_revenue_supply_arr = [291.97, 237.32, 134.59, 217.27, 234.34, 278.55, 93.30, 82.87, 109.39, 176.26, 123.28, 129.54, 124.60, 180.65, 87.05, 95.88, 53.92, 76.76, 50.22, 54.21, 30.30, 24.62];
+var county_revenue_distributed_arr = [271.95, 366.00, 138.69, 225.76, 181.27, 256.79, 32.54, 44.56, 42.99, 77.53, 64.33, 69.61, 52.37, 74.29, 30.91, 36.59, 16.94, 34.27, 29.89, 20.62, 11.70, 3.12];
+var county_revenue_others_arr = [142.67, 306.88, 42.49, 126.41, 51.20, 205.07, 23.49, 28.28, 16.03, 58.24, 14.67, 16.32, 9.95, 14.10, 5.77, 8.72, 3.77, 18.89, 18.32, 6.66, 67.83, 1.74];
+var county_revenue_self_raised_arr = [610.27, 758.08, 249.14, 419.02, 222.56, 364.01, 44.21, 52.53, 44.01, 85.46, 34.93, 42.23, 27.26, 43.95, 11.40, 26.25, 4.15, 33.03, 68.61, 28.47, 12.12, 0.97];
+var county_revenue_properties_arr = [108.86, 218.97, 2.26, 10.72, 26.46, 59.20, 1.05, 12.54, 11.53, 1.57, 0.99, 2.70, 0.93, 5.49, 2.60, 2.07, 0.80, 3.79, 2.09, 1.33, 1.76, 0.08];
+
 
 // 歲入總表
-var county_revenue_supply_arr = [264, 259, 223, 230, 261, 144, 94, 74, 109, 178, 110, 125, 133, 185, 84, 101, 60, 79, 50, 54, 31, 26];
-var county_revenue_distributed_arr = [251, 340, 202, 165, 263, 121, 41, 38, 35, 74, 76, 65, 52, 68, 35, 34, 16, 33, 31, 24, 11, 3];
-var county_revenue_others_arr = [152.94, 247.59, 173.73, 49.85, 169.04, 84.89, 21.15, 36.50, 19.84, 38.68, 12.52, 16.53, 4.65, 14.90, 5.46, 8.98, 3.82, 15.50, 19.02, 6.91, 77.26, 2.42];
-var county_revenue_self_raised_arr = [610.68, 717.33, 413.79, 214.09, 363.89, 261.20, 42.74, 56.67, 41.12, 83.29, 29.55, 41.15, 25.59, 41.54, 10.89, 21.79, 3.66, 35.41, 70.32, 28.55, 11.17, 0.98];
-var county_revenue_properties_arr = [93.444, 37.356, 11.662, 75.917, 62.562, 1.497, 6.081, 1.858, 18.298, 1.369, 0.683, 0.153, 1.421, 3.843, 0.687, 12.241, 1.538, 4.699, 1.370, 1.429, 1.499, 0.103];
+var county_revenue_supply_arr_2013 = [264, 259, 223, 230, 261, 144, 94, 74, 109, 178, 110, 125, 133, 185, 84, 101, 60, 79, 50, 54, 31, 26];
+var county_revenue_distributed_arr_2013 = [251, 340, 202, 165, 263, 121, 41, 38, 35, 74, 76, 65, 52, 68, 35, 34, 16, 33, 31, 24, 11, 3];
+var county_revenue_others_arr_2013 = [152.94, 247.59, 173.73, 49.85, 169.04, 84.89, 21.15, 36.50, 19.84, 38.68, 12.52, 16.53, 4.65, 14.90, 5.46, 8.98, 3.82, 15.50, 19.02, 6.91, 77.26, 2.42];
+var county_revenue_self_raised_arr_2013 = [610.68, 717.33, 413.79, 214.09, 363.89, 261.20, 42.74, 56.67, 41.12, 83.29, 29.55, 41.15, 25.59, 41.54, 10.89, 21.79, 3.66, 35.41, 70.32, 28.55, 11.17, 0.98];
+var county_revenue_properties_arr_2013 = [93.444, 37.356, 11.662, 75.917, 62.562, 1.497, 6.081, 1.858, 18.298, 1.369, 0.683, 0.153, 1.421, 3.843, 0.687, 12.241, 1.538, 4.699, 1.370, 1.429, 1.499, 0.103];
 
 var county_revenue_supply_arr_2012 = [315, 325, 237, 284, 312, 170, 105, 85, 120, 188, 124, 128, 125, 199, 89, 97, 54, 81, 48, 53, 35, 23];
 var county_revenue_distributed_arr_2012 = [250, 337, 200, 166, 227, 115, 29, 33, 40, 79, 47, 56, 56, 69, 30, 36, 18, 35, 34, 19, 12, 5];
@@ -42,7 +50,7 @@ var county_revenue_budget_arr_2011 = [1406, 1589, 923, 792, 1183, 578, 216, 272,
 var svgns = "http://www.w3.org/2000/svg";
 var xlinkns = "http://www.w3.org/1999/xlink";
 
-function generateChart(chartId, lineId, array1, array2, array3, array4, array5) {
+function generateChart(chartId, lineId, array1, array2, array3, array4, array5, countyNameArr) {
     var chart_2013 = document.getElementById(chartId);
     var line_2013 = document.getElementById(lineId);
     var num_grade = getHeadAndInterval_inputMultipleArray(array1, array2, array3, array4, array5).head;
@@ -126,7 +134,7 @@ function generateChart(chartId, lineId, array1, array2, array3, array4, array5) 
         tns.setAttribute("style", txt_sty_str);
         tns.setAttribute("class", 'rect' + i);
         tns.setAttribute("id", 'county_tag');
-        tns.textContent = county_name[i];
+        tns.textContent = countyNameArr[i];
         chart_2013.appendChild(tns);
     }
     // } else if (screen.width < 500) {
@@ -288,10 +296,11 @@ function generateChart(chartId, lineId, array1, array2, array3, array4, array5) 
 
 
 
+generateChart('chart_2014', 'line_2014', county_revenue_supply_arr, county_revenue_distributed_arr, county_revenue_self_raised_arr, county_revenue_properties_arr, county_revenue_others_arr, county_name);
 
-generateChart('chart_2013', 'line_2013', county_revenue_supply_arr, county_revenue_distributed_arr, county_revenue_self_raised_arr, county_revenue_properties_arr, county_revenue_others_arr);
-generateChart('chart_2012', 'line_2012', county_revenue_supply_arr_2012, county_revenue_distributed_arr_2012, county_revenue_self_raised_arr_2012, county_revenue_properties_arr_2012, county_revenue_others_arr_2012);
-generateChart('chart_2011', 'line_2011', county_revenue_supply_arr_2011, county_revenue_distributed_arr_2011, county_revenue_self_raised_arr_2011, county_revenue_properties_arr_2011, county_revenue_others_arr_2011);
+generateChart('chart_2013', 'line_2013', county_revenue_supply_arr_2013, county_revenue_distributed_arr_2013, county_revenue_self_raised_arr_2013, county_revenue_properties_arr_2013, county_revenue_others_arr_2013, county_name_before_2014);
+generateChart('chart_2012', 'line_2012', county_revenue_supply_arr_2012, county_revenue_distributed_arr_2012, county_revenue_self_raised_arr_2012, county_revenue_properties_arr_2012, county_revenue_others_arr_2012, county_name_before_2014);
+generateChart('chart_2011', 'line_2011', county_revenue_supply_arr_2011, county_revenue_distributed_arr_2011, county_revenue_self_raised_arr_2011, county_revenue_properties_arr_2011, county_revenue_others_arr_2011, county_name_before_2014);
 
 ////
 $(document).ready(function() {
@@ -311,13 +320,25 @@ $(document).ready(function() {
         // var box_left = chart_div_width / 4 + rect_x;
         var box_left = rect_x + 40;
         // console.log(box_top + " " + box_left);
+        $('#box_2014').css('top', box_top);
+        $('#box_2014').css('left', box_left);
+        $('#box_2014 > p:nth-child(2) > map').text(Math.round(county_revenue_others_arr[rect_index]));
+        $('#box_2014 > p:nth-child(4) > map').text(Math.round(county_revenue_properties_arr[rect_index]));
+        $('#box_2014 > p:nth-child(6) > map').text(Math.round(county_revenue_self_raised_arr[rect_index]));
+        $('#box_2014 > p:nth-child(8) > map').text(Math.round(county_revenue_distributed_arr[rect_index]));
+        $('#box_2014 > p:nth-child(10) > map').text(Math.round(county_revenue_supply_arr[rect_index]));
+
+        $("." + rect_class).css('opacity', 0.7);
+        $('#box_2014').css('visibility', 'visible');
+
+
         $('#box_2013').css('top', box_top);
         $('#box_2013').css('left', box_left);
-        $('#box_2013 > p:nth-child(2) > map').text(Math.round(county_revenue_others_arr[rect_index]));
-        $('#box_2013 > p:nth-child(4) > map').text(Math.round(county_revenue_properties_arr[rect_index]));
-        $('#box_2013 > p:nth-child(6) > map').text(Math.round(county_revenue_self_raised_arr[rect_index]));
-        $('#box_2013 > p:nth-child(8) > map').text(Math.round(county_revenue_distributed_arr[rect_index]));
-        $('#box_2013 > p:nth-child(10) > map').text(Math.round(county_revenue_supply_arr[rect_index]));
+        $('#box_2013 > p:nth-child(2) > map').text(Math.round(county_revenue_others_arr_2013[rect_index]));
+        $('#box_2013 > p:nth-child(4) > map').text(Math.round(county_revenue_properties_arr_2013[rect_index]));
+        $('#box_2013 > p:nth-child(6) > map').text(Math.round(county_revenue_self_raised_arr_2013[rect_index]));
+        $('#box_2013 > p:nth-child(8) > map').text(Math.round(county_revenue_distributed_arr_2013[rect_index]));
+        $('#box_2013 > p:nth-child(10) > map').text(Math.round(county_revenue_supply_arr_2013[rect_index]));
 
         $("." + rect_class).css('opacity', 0.7);
         $('#box_2013').css('visibility', 'visible');
@@ -345,6 +366,7 @@ $(document).ready(function() {
     }).mouseout(function() {
         var rect_class = $(this).attr('class');
         $("." + rect_class).css('opacity', 1);
+        $('#box_2014').css('visibility', 'hidden');
         $('#box_2013').css('visibility', 'hidden');
 
         $('#box_2012').css('visibility', 'hidden');

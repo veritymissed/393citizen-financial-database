@@ -107,6 +107,7 @@
                         <option class="" value="2011">2011</option>
                         <option class="" value="2012">2012</option>
                         <option class="" value="2013">2013</option>
+                        <option class="" value="2014">2014</option>
                     </select>
                 </li>
                 <li class="inline-block font_white">項目：
@@ -131,7 +132,8 @@
             <hr style="width: 140px;display: inline-block;border-color: #3c566a;border-width: 1px; border-style: groove;margin:0px 8px 10px 8px;">
             <h3 class="font_weight_800 text-center year_area" style="display: none">2011年度</h3>
             <h3 class="font_weight_800 text-center year_area" style="display: none">2012年度</h3>
-            <h3 class="font_weight_800 text-center year_area">2013年度</h3>
+            <h3 class="font_weight_800 text-center year_area" style="display: none">2013年度</h3>
+            <h3 class="font_weight_800 text-center year_area">2014年度</h3>
             <hr style="width: 140px;display: inline-block;border-color: #3c566a;border-width: 1px; border-style: groove;margin:0px 8px 10px 8px;">
         </div>
         <div class="row font_red text-center">
@@ -195,6 +197,30 @@
                 <g id="chart_2013"></g>
             </svg>
             <div class="bar_value_box" id="box_2013">
+                <p>昏迷指數</p>
+                <p>
+                    <map style="color: #B54D52"></map>&nbsp&nbsp</p>
+                <p class="box_sub">現金償付能力
+                    <map></map>
+                </p>
+                <p class="box_sub">預算支應能力
+                    <map></map>
+                </p>
+                <p class="box_sub">長債償還能力
+                    <map></map>
+                </p>
+                <p class="box_sub">永續服務能力
+                    <map></map>
+                </p>
+            </div>
+        </div>
+        <div class="text-center chart_area" style="height: 380px;position: relative;">
+            <svg width="900" height="430" class="each_year_chart" id="chart_svg" style="z-index: 1;">
+                <g id="rect_2014"></g>
+                <g id="line_2014"></g>
+                <g id="chart_2014"></g>
+            </svg>
+            <div class="bar_value_box" id="box_2014">
                 <p>昏迷指數</p>
                 <p>
                     <map style="color: #B54D52"></map>&nbsp&nbsp</p>
@@ -309,7 +335,7 @@
 
 </body>
 <script type="text/javascript">
-    var yearArray = ['2011', '2012', '2013'];
+    var yearArray = ['2011', '2012', '2013', '2014'];
 
     function onload() {
         var urlSearch = window.location.search;
@@ -328,12 +354,12 @@
         //         each_year_chart[i].setAttribute("width", '300');
         //     }
         // }
-        document.getElementById('select_1').value = '2013';
+        document.getElementById('select_1').value = '2014';
         document.getElementById('select_3').value = 'coma';
 
         queryYear(year_selected_user);
         if (urlSearch == '') {
-            queryYear('2013');
+            queryYear('2014');
         }
     }
 

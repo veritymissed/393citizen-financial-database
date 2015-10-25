@@ -1,9 +1,17 @@
-var county_name = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
-var county_coma_arr = [5.04, 5.47, 5.60, 3.95, 4.46, 5.59, 5.50, 5.23, 3.40, 3.59, 3.11, 3.98, 3.31, 3.72, 3.99, 3.84, 3.78, 3.68, 5.42, 4.53];
-var county_coma_cash_arr = [3.54, 3.53, 4.29, 3.15, 3.45, 4.65, 4.58, 4.72, 2.58, 4.04, 3.74, 4.49, 6.31, 4.17, 7.05, 2.38, 4.41, 3.11, 4.75, 5.16];
-var county_coma_budget_arr = [7.28, 7.98, 7.28, 6.20, 6.55, 6.67, 4.97, 6.05, 4.70, 4.08, 3.18, 3.67, 2.64, 2.80, 2.28, 3.86, 3.57, 4.39, 5.77, 3.83];
-var county_coma_longdebt_arr = [3.06, 3.23, 3.71, 3.56, 2.72, 5.16, 7.76, 1.69, 1.32, 3.12, 3.21, 3.26, 3.45, 6.23, 7.42, 5.13, 3.41, 3.00, 4.73, 4.66];
-var county_coma_long_arr = [6.80, 6.93, 6.76, 4.39, 5.03, 6.64, 3.89, 5.43, 3.15, 3.21, 1.58, 2.16, 1.23, 1.57, 0.72, 2.36, 0.68, 3.36, 6.31, 3.30];
+var county_name = ['新北市', '台北市', '桃園市', '台中市', '台南市', '高雄市', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+var county_name_before_2014 = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+
+var county_coma_arr = [4.87, 6.67, 4.89, 4.94, 3.78, 4.09, 4.50, 4.52, 3.19, 4.53, 3.88, 3.86, 4.10, 4.19, 3.64, 3.12, 4.61, 3.58, 4.86, 5.10];
+var county_coma_cash_arr = [2.97, 6.04, 4.25, 3.35, 3.00, 2.75, 4.10, 4.54, 3.20, 5.02, 4.15, 4.20, 4.86, 6.05, 4.66, 3.04, 5.87, 2.72, 4.72, 5.75]
+var county_coma_budget_arr = [5.97, 7.96, 4.78, 5.36, 5.68, 6.24, 3.85, 4.85, 4.03, 3.46, 2.60, 3.17, 1.82, 1.58, 1.92, 2.97, 5.09, 3.46, 3.67, 2.46];
+var county_coma_longdebt_arr = [5.55, 4.43, 5.96, 6.30, 3.01, 3.69, 6.77, 3.68, 2.62, 5.49, 6.50, 5.65, 7.78, 5.76, 6.44, 4.78, 6.01, 5.62, 4.94, 8.23];
+var county_coma_long_arr = [6.90, 8.85, 5.20, 6.33, 4.21, 5.03, 3.65, 5.01, 2.90, 3.67, 2.02, 2.09, 1.18, 1.52, 0.54, 1.75, 0.24, 3.38, 6.21, 3.30];
+
+var county_coma_arr_2013 = [5.04, 5.47, 5.60, 3.95, 4.46, 5.59, 5.50, 5.23, 3.40, 3.59, 3.11, 3.98, 3.31, 3.72, 3.99, 3.84, 3.78, 3.68, 5.42, 4.53];
+var county_coma_cash_arr_2013 = [3.54, 3.53, 4.29, 3.15, 3.45, 4.65, 4.58, 4.72, 2.58, 4.04, 3.74, 4.49, 6.31, 4.17, 7.05, 2.38, 4.41, 3.11, 4.75, 5.16];
+var county_coma_budget_arr_2013 = [7.28, 7.98, 7.28, 6.20, 6.55, 6.67, 4.97, 6.05, 4.70, 4.08, 3.18, 3.67, 2.64, 2.80, 2.28, 3.86, 3.57, 4.39, 5.77, 3.83];
+var county_coma_longdebt_arr_2013 = [3.06, 3.23, 3.71, 3.56, 2.72, 5.16, 7.76, 1.69, 1.32, 3.12, 3.21, 3.26, 3.45, 6.23, 7.42, 5.13, 3.41, 3.00, 4.73, 4.66];
+var county_coma_long_arr_2013 = [6.80, 6.93, 6.76, 4.39, 5.03, 6.64, 3.89, 5.43, 3.15, 3.21, 1.58, 2.16, 1.23, 1.57, 0.72, 2.36, 0.68, 3.36, 6.31, 3.30];
 
 var county_coma_arr_2012 = [5.06, 5.32, 5.43, 3.84, 4.12, 5.51, 4.76, 4.91, 2.67, 3.20, 3.37, 3.31, 3.42, 2.87, 3.37, 3.46, 2.87, 3.27, 5.16, 4.23];
 var county_coma_cash_arr_2012 = [2.94, 3.48, 4.40, 1.64, 3.14, 4.11, 5.61, 6.64, 3.66, 3.65, 3.99, 5.97, 5.26, 4.40, 5.58, 3.96, 6.31, 3.65, 4.93, 5.96];
@@ -21,12 +29,19 @@ var svgns = "http://www.w3.org/2000/svg";
 var xlinkns = "http://www.w3.org/1999/xlink";
 var coma_tag_name = ['腦死區', '重度葉克膜區', '中重度插管區', '中度加護病房', '普通病房', '追蹤觀察'];
 
-function generateComaChart(chartId, rectId, lineId, year_coma_array) {
-    var chart_2013 = document.getElementById(chartId);
+function generateComaChart(chartId, rectId, lineId, year_coma_array,countyNameArr) {
+    var chartAnchor = document.getElementById(chartId);
     var rect_2013 = document.getElementById(rectId);
     var line_2013 = document.getElementById(lineId);
-    var num_grade = coma_getHeadAndInterval_inputMultipleArray(year_coma_array).head;
-    var debt_distance = coma_getHeadAndInterval_inputMultipleArray(year_coma_array).interval;
+
+    var year_coma_array_modified = [];
+    year_coma_array.forEach(function(val,idx,arr) {
+      if(val<6) year_coma_array_modified.push(val);
+      else year_coma_array_modified.push(5.99);
+    });
+
+    var num_grade = coma_getHeadAndInterval_inputMultipleArray(year_coma_array_modified).head;
+    var debt_distance = coma_getHeadAndInterval_inputMultipleArray(year_coma_array_modified).interval;
 
     // console.log(num_grade + " " + debt_distance);
     var h_h = parseFloat($('#chart_svg').attr('height'));
@@ -106,7 +121,7 @@ function generateComaChart(chartId, rectId, lineId, year_coma_array) {
         rect.setAttribute("width", 1000);
         rect.setAttribute("fill", fillColor);
         rect.setAttribute("stroke", "tranparent");
-        chart_2013.appendChild(rect);
+        chartAnchor.appendChild(rect);
     }
     var theBottomTagY = 290;
     for (var i = 0; i < coma_tag_name.length; i++) {
@@ -134,7 +149,7 @@ function generateComaChart(chartId, rectId, lineId, year_coma_array) {
         grdns.setAttribute("fill", "#f1f3f3");
         grdns.setAttribute("style", txt_sty_str);
         grdns.textContent = coma_tag_name[i];
-        chart_2013.appendChild(grdns);
+        chartAnchor.appendChild(grdns);
     }
 
 
@@ -145,25 +160,27 @@ function generateComaChart(chartId, rectId, lineId, year_coma_array) {
     sep.setAttribute("height", chart_part_height + 10);
     sep.setAttribute("fill", '#f1f3f3');
     sep.setAttribute("stroke", "tranparent");
-    chart_2013.appendChild(sep);
+    chartAnchor.appendChild(sep);
 
     for (var i = 0; i < year_coma_array.length; i++) {
         var val;
-        var test = year_coma_array[i] - 4 * debt_distance;
+
+        var test = year_coma_array_modified[i] - 4 * debt_distance;
         if (test >= 2.5 || test < 3) {
-            val = (year_coma_array[i] - 4 * debt_distance - 4 * debt_distance + 2 * 4 * debt_distance) * chart_part_height_unit;
+            val = (year_coma_array_modified[i] - 4 * debt_distance - 4 * debt_distance + 2 * 4 * debt_distance) * chart_part_height_unit;
         } else if (test >= 2.0 || test < 2.5) {
-            val = (year_coma_array[i] - 4 * debt_distance - 3 * debt_distance + 2 * 3 * debt_distance) * chart_part_height_unit;
+            val = (year_coma_array_modified[i] - 4 * debt_distance - 3 * debt_distance + 2 * 3 * debt_distance) * chart_part_height_unit;
         } else if (test >= 1.5 || test < 2) {
-            val = (year_coma_array[i] - 4 * debt_distance - 2 * debt_distance + 2 * 2 * debt_distance) * chart_part_height_unit;
+            val = (year_coma_array_modified[i] - 4 * debt_distance - 2 * debt_distance + 2 * 2 * debt_distance) * chart_part_height_unit;
         } else if (test >= 1.0 || test < 1.5) {
-            val = (year_coma_array[i] - 4 * debt_distance - 1 * debt_distance + 2 * 1 * debt_distance) * chart_part_height_unit;
+            val = (year_coma_array_modified[i] - 4 * debt_distance - 1 * debt_distance + 2 * 1 * debt_distance) * chart_part_height_unit;
         } else {}
+        console.log(val);
 
         var h = chart_part_height + 30 - val - 1 * debt_distance * chart_part_height_unit;
 
         var w = 20;
-        var fillColor = get_chart_bar_color(year_coma_array[i]);
+        var fillColor = get_chart_bar_color(year_coma_array_modified[i]);
 
         var ins = document.createElementNS(svgns, "rect");
         ins.setAttribute("x", i * 38 + 140);
@@ -173,7 +190,7 @@ function generateComaChart(chartId, rectId, lineId, year_coma_array) {
         ins.setAttribute("fill", '#f1f3f3');
         ins.setAttribute("stroke", "tranparent");
         ins.setAttribute("class", 'rect' + i);
-        chart_2013.appendChild(ins);
+        chartAnchor.appendChild(ins);
 
         var tns = document.createElementNS(svgns, "text");
         var txt_sty_str = 'font-size:15px;font-weight: bold;cursor:pointer;';
@@ -185,8 +202,8 @@ function generateComaChart(chartId, rectId, lineId, year_coma_array) {
         tns.setAttribute("style", txt_sty_str);
         tns.setAttribute("class", 'rect' + i);
         tns.setAttribute("id", 'county_tag');
-        tns.textContent = county_name[i];
-        chart_2013.appendChild(tns);
+        tns.textContent = countyNameArr[i];
+        chartAnchor.appendChild(tns);
     }
 };
 
@@ -197,10 +214,10 @@ function generateComaChart(chartId, rectId, lineId, year_coma_array) {
 
 
 
-
-generateComaChart('chart_2013', 'rect_2013', 'line_2013', county_coma_arr);
-generateComaChart('chart_2012', 'rect_2012', 'line_2012', county_coma_arr_2012);
-generateComaChart('chart_2011', 'rect_2011', 'line_2011', county_coma_arr_2011);
+generateComaChart('chart_2014', 'rect_2014', 'line_2014', county_coma_arr,county_name);
+generateComaChart('chart_2013', 'rect_2013', 'line_2013', county_coma_arr_2013,county_name_before_2014);
+generateComaChart('chart_2012', 'rect_2012', 'line_2012', county_coma_arr_2012,county_name_before_2014);
+generateComaChart('chart_2011', 'rect_2011', 'line_2011', county_coma_arr_2011,county_name_before_2014);
 
 $(document).ready(function() {
     var chart_div_height = parseFloat($('#chart_svg').attr('height'));
@@ -219,13 +236,23 @@ $(document).ready(function() {
         // var box_left = chart_div_width / 4 + rect_x;
         var box_left = rect_x + 40;
         // console.log(box_top + " " + box_left);
+        $('#box_2014').css('top', box_top);
+        $('#box_2014').css('left', box_left);
+        $('#box_2014 > p:nth-child(2) > map').text(county_coma_arr[rect_index]);
+        $('#box_2014 > p:nth-child(3) > map').text(county_coma_cash_arr[rect_index]);
+        $('#box_2014 > p:nth-child(4) > map').text(county_coma_budget_arr[rect_index]);
+        $('#box_2014 > p:nth-child(5) > map').text(county_coma_longdebt_arr[rect_index]);
+        $('#box_2014 > p:nth-child(6) > map').text(county_coma_long_arr[rect_index]);
+        $(this).css('opacity', 0.7);
+        $('#box_2014').css('visibility', 'visible');
+
         $('#box_2013').css('top', box_top);
         $('#box_2013').css('left', box_left);
-        $('#box_2013 > p:nth-child(2) > map').text(county_coma_arr[rect_index]);
-        $('#box_2013 > p:nth-child(3) > map').text(county_coma_cash_arr[rect_index]);
-        $('#box_2013 > p:nth-child(4) > map').text(county_coma_budget_arr[rect_index]);
-        $('#box_2013 > p:nth-child(5) > map').text(county_coma_longdebt_arr[rect_index]);
-        $('#box_2013 > p:nth-child(6) > map').text(county_coma_long_arr[rect_index]);
+        $('#box_2013 > p:nth-child(2) > map').text(county_coma_arr_2013[rect_index]);
+        $('#box_2013 > p:nth-child(3) > map').text(county_coma_cash_arr_2013[rect_index]);
+        $('#box_2013 > p:nth-child(4) > map').text(county_coma_budget_arr_2013[rect_index]);
+        $('#box_2013 > p:nth-child(5) > map').text(county_coma_longdebt_arr_2013[rect_index]);
+        $('#box_2013 > p:nth-child(6) > map').text(county_coma_long_arr_2013[rect_index]);
         $(this).css('opacity', 0.7);
         $('#box_2013').css('visibility', 'visible');
 
@@ -252,6 +279,8 @@ $(document).ready(function() {
     }).mouseout(function() {
         var rect_class = $(this).attr('class');
         $("." + rect_class).css('opacity', 1);
+        $('#box_2014').css('visibility', 'hidden');
+
         $('#box_2013').css('visibility', 'hidden');
 
         $('#box_2012').css('visibility', 'hidden');

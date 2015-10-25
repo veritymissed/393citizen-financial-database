@@ -1,8 +1,13 @@
-var county_name = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+var county_name = ['新北市', '台北市', '桃園市', '台中市', '台南市', '高雄市', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+var county_name_before_2014 = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
 
 // 預決算數比較
-var county_expenditure_decided_arr = [1467.54, 1695.80, 1095.38, 779.17, 1220.72, 577.36, 197.79, 201.70, 269.42, 388.93, 222.84, 255.71, 219.47, 315.69, 139.34, 169.58, 90.56, 160.68, 162.06, 105.55, 108.33, 32.27];
-var county_expenditure_budget_arr = [1554.16, 1769.54, 1195.63, 834.60, 1263.83, 629.28, 206.33, 250.21, 286.87, 413.40, 248.69, 287.27, 244.42, 328.75, 152.57, 181.56, 99.47, 171.11, 180.64, 118.31, 122.89, 36.36];
+var county_expenditure_decided_arr = [1544.73, 1675.04, 627.60, 1048.69, 735.21, 1262.66, 197.72, 231.50, 264.56, 412.05, 216.92, 266.32, 219.10, 310.58, 142.13, 170.91, 83.76, 166.66, 168.48, 106.41, 114.12, 30.31];
+var county_expenditure_budget_arr = [1595.08, 1736.38, 702.76, 1165.16, 806.57, 1299.73, 209.16, 256.22, 285.71, 447.32, 238.08, 292.08, 240.64, 331.72, 154.01, 182.86, 93.45, 179.33, 183.81, 116.10, 130.08, 34.07];
+
+
+var county_expenditure_decided_arr_2013 = [1467.54, 1695.80, 1095.38, 779.17, 1220.72, 577.36, 197.79, 201.70, 269.42, 388.93, 222.84, 255.71, 219.47, 315.69, 139.34, 169.58, 90.56, 160.68, 162.06, 105.55, 108.33, 32.27];
+var county_expenditure_budget_arr_2013 = [1554.16, 1769.54, 1195.63, 834.60, 1263.83, 629.28, 206.33, 250.21, 286.87, 413.40, 248.69, 287.27, 244.42, 328.75, 152.57, 181.56, 99.47, 171.11, 180.64, 118.31, 122.89, 36.36];
 var county_expenditure_decided_arr_2012 = [1498.67, 1760.75, 998.83, 825.84, 1248.90, 580.94, 192.96, 222.90, 279.35, 394.75, 216.28, 247.35, 219.79, 328.27, 142.09, 163.67, 87.47, 162.19, 163.59, 103.65, 105.21, 30.72];
 var county_expenditure_budget_arr_2012 = [1574.48, 1868.92, 1107.02, 874.73, 1312.67, 621.52, 200.97, 258.08, 336.83, 415.49, 232.83, 277.41, 235.62, 342.41, 155.66, 177.03, 94.66, 176.31, 182.83, 112.88, 114.95, 33.43];
 var county_expenditure_decided_arr_2011 = [1458.99, 1730.32, 968.87, 775.79, 1267.12, 571.75, 204.52, 230.42, 264.66, 365.77, 210.31, 251.14, 214.44, 359.91, 141.07, 165.37, 83.97, 176.10, 154.91, 112.35, 121.22, 33.91];
@@ -11,7 +16,7 @@ var county_expenditure_budget_arr_2011 = [1552.00, 1796.00, 1054.00, 841.00, 134
 var svgns = "http://www.w3.org/2000/svg";
 var xlinkns = "http://www.w3.org/1999/xlink";
 
-function generateExpenditureChart(chartId, lineId, array1, array2) {
+function generateExpenditureChart(chartId, lineId, array1, array2, countyNameArr) {
     var chart_2013 = document.getElementById(chartId);
     var line_2013 = document.getElementById(lineId);
     if (Math.max.apply(null, array1) >= Math.max.apply(null, array2)) {
@@ -94,16 +99,16 @@ function generateExpenditureChart(chartId, lineId, array1, array2) {
         tns.setAttribute("style", txt_sty_str);
         tns.setAttribute("class", 'rect' + i);
         tns.setAttribute("id", 'county_tag');
-        tns.textContent = county_name[i];
+        tns.textContent = countyNameArr[i];
         chart_2013.appendChild(tns);
     };
 
 }
 
-
-generateExpenditureChart('chart_2013_2', 'line_2013_2', county_expenditure_budget_arr, county_expenditure_decided_arr);
-generateExpenditureChart('chart_2012_2', 'line_2012_2', county_expenditure_budget_arr_2012, county_expenditure_decided_arr_2012);
-generateExpenditureChart('chart_2011_2', 'line_2011_2', county_expenditure_budget_arr_2011, county_expenditure_decided_arr_2011);
+generateExpenditureChart('chart_2014_2', 'line_2014_2', county_expenditure_budget_arr, county_expenditure_decided_arr, county_name);
+generateExpenditureChart('chart_2013_2', 'line_2013_2', county_expenditure_budget_arr_2013, county_expenditure_decided_arr_2013, county_name_before_2014);
+generateExpenditureChart('chart_2012_2', 'line_2012_2', county_expenditure_budget_arr_2012, county_expenditure_decided_arr_2012, county_name_before_2014);
+generateExpenditureChart('chart_2011_2', 'line_2011_2', county_expenditure_budget_arr_2011, county_expenditure_decided_arr_2011, county_name_before_2014);
 
 $(document).ready(function() {
     var chart_div_height = parseFloat($('#chart_svg').attr('height'));
@@ -122,11 +127,17 @@ $(document).ready(function() {
         // var box_left = chart_div_width / 4 + rect_x;
         var box_left = rect_x + 40;
         // console.log(box_top + " " + box_left);
+        $('#box_2_2014').css('top', box_top);
+        $('#box_2_2014').css('left', box_left);
+        $('#box_2_2014 > p:nth-child(2) > map').text(Math.round(county_expenditure_decided_arr[rect_index]));
+        $('#box_2_2014 > p:nth-child(4) > map').text(Math.round(county_expenditure_budget_arr[rect_index]));
+        $("." + rect_class).css('opacity', 0.7);
+        $('#box_2_2014').css('visibility', 'visible');
+
         $('#box_2_2013').css('top', box_top);
         $('#box_2_2013').css('left', box_left);
-        $('#box_2_2013 > p:nth-child(2) > map').text(Math.round(county_expenditure_decided_arr[rect_index]));
-        $('#box_2_2013 > p:nth-child(4) > map').text(Math.round(county_expenditure_budget_arr[rect_index]));
-
+        $('#box_2_2013 > p:nth-child(2) > map').text(Math.round(county_expenditure_decided_arr_2013[rect_index]));
+        $('#box_2_2013 > p:nth-child(4) > map').text(Math.round(county_expenditure_budget_arr_2013[rect_index]));
         $("." + rect_class).css('opacity', 0.7);
         $('#box_2_2013').css('visibility', 'visible');
 
@@ -147,6 +158,8 @@ $(document).ready(function() {
     }).mouseout(function() {
         var rect_class = $(this).attr('class');
         $("." + rect_class).css('opacity', 1);
+        $('#box_2_2014').css('visibility', 'hidden');
+
         $('#box_2_2013').css('visibility', 'hidden');
 
         $('#box_2_2012').css('visibility', 'hidden');

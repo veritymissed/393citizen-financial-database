@@ -1,12 +1,15 @@
-var county_name = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
-var county_deficit_arr = [-95.55, -94.36, -70.44, -44.29, -100.03, 35.24, 7.36, 4.87, -45.91, -13.32, 5.87, -7.76, -2.85, -2.14, -3.86, 8.72, -5.84, 7.00, 10.00, 8.53, 23.84, 0.86];
+var county_name = ['新北市', '台北市', '桃園市', '台中市', '台南市', '高雄市', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+var county_name_before_2014 = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+
+var county_deficit_arr = [-119.02, 212.20, -60.44, -49.52, -19.39, -99.03, -3.14, -10.71, -40.61, -12.98, 21.29, -5.91, -3.99, 7.91, -4.39, -1.39, -4.18, 0.08, 0.65, 4.88, 9.58, 0.22];
+var county_deficit_arr_2013 = [-95.55, -94.36, -70.44, -44.29, -100.03, 35.24, 7.36, 4.87, -45.91, -13.32, 5.87, -7.76, -2.85, -2.14, -3.86, 8.72, -5.84, 7.00, 10.00, 8.53, 23.84, 0.86];
 var county_deficit_arr_2012 = [-151.89, -150.04, -47.22, -49.67, -210.80, 43.87, 6.61, 3.69, -57.00, -32.27, -0.73, -7.26, -8.85, -4.59, -6.79, 11.47, -7.83, 2.63, 4.82, 3.20, 29.54, -0.03];
 var county_deficit_arr_2011 = [-30.96, -89.04, -58.91, -59.58, -138.73, 8.79, -0.67, -2.69, -47.10, -30.05, 9.33, -5.06, 1.80, -15.79, -1.55, -3.52, -4.71, -6.41, 1.63, 2.62, 1.43, -0.45];
 
 var svgns = "http://www.w3.org/2000/svg";
 var xlinkns = "http://www.w3.org/1999/xlink";
 
-function generateDeficitChart(chartId, lineId, array) {
+function generateDeficitChart(chartId, lineId, array, countyNameArr) {
     var chart_2013 = document.getElementById(chartId);
     var line_2013 = document.getElementById(lineId);
 
@@ -140,7 +143,7 @@ function generateDeficitChart(chartId, lineId, array) {
         tns.setAttribute("style", txt_sty_str);
         tns.setAttribute("class", 'rect' + i);
         tns.setAttribute("id", 'county_tag');
-        tns.textContent = county_name[i];
+        tns.textContent = countyNameArr[i];
         chart_2013.appendChild(tns);
     }
 
@@ -347,9 +350,10 @@ function generateDeficitChart(chartId, lineId, array) {
 
 
 
-generateDeficitChart('chart_2013', 'line_2013', county_deficit_arr);
-generateDeficitChart('chart_2012', 'line_2012', county_deficit_arr_2012);
-generateDeficitChart('chart_2011', 'line_2011', county_deficit_arr_2011);
+generateDeficitChart('chart_2014', 'line_2014', county_deficit_arr, county_name);
+generateDeficitChart('chart_2013', 'line_2013', county_deficit_arr_2013, county_name_before_2014);
+generateDeficitChart('chart_2012', 'line_2012', county_deficit_arr_2012, county_name_before_2014);
+generateDeficitChart('chart_2011', 'line_2011', county_deficit_arr_2011, county_name_before_2014);
 
 
 
@@ -377,9 +381,15 @@ $(document).ready(function() {
         // var box_left = chart_div_width / 4 + rect_x;
         var box_left = rect_x + 40;
         // console.log(box_top + " " + box_left);
+        $('#box_2014').css('top', box_top);
+        $('#box_2014').css('left', box_left);
+        $('#box_2014 > p:nth-child(2) > map').text(Math.round(county_deficit_arr[rect_index]));
+        $("." + rect_class).css('opacity', 0.7);
+        $('#box_2014').css('visibility', 'visible');
+
         $('#box_2013').css('top', box_top);
         $('#box_2013').css('left', box_left);
-        $('#box_2013 > p:nth-child(2) > map').text(Math.round(county_deficit_arr[rect_index]));
+        $('#box_2013 > p:nth-child(2) > map').text(Math.round(county_deficit_arr_2013[rect_index]));
         $("." + rect_class).css('opacity', 0.7);
         $('#box_2013').css('visibility', 'visible');
 
@@ -398,6 +408,8 @@ $(document).ready(function() {
     }).mouseout(function() {
         var rect_class = $(this).attr('class');
         $("." + rect_class).css('opacity', 1);
+        $('#box_2014').css('visibility', 'hidden');
+
         $('#box_2013').css('visibility', 'hidden');
 
         $('#box_2012').css('visibility', 'hidden');

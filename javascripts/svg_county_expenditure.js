@@ -1,11 +1,19 @@
-var county_name = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+var county_name = ['新北市', '台北市', '桃園市', '台中市', '台南市', '高雄市', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+var county_name_before_2014 = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+
+
+var county_expenditure_general_arr = [197.72, 131.32, 57.09, 113.40, 88.90, 130.87, 17.99, 19.62, 31.85, 30.56, 22.44, 21.63, 25.80, 34.28, 26.08, 20.66, 9.60, 23.37, 20.05, 15.30, 17.45, 4.43];
+var county_expenditure_economic_arr = [284.90, 182.80, 83.63, 214.14, 133.48, 131.06, 19.46, 50.91, 49.36, 63.17, 41.93, 53.87, 36.87, 41.41, 17.82, 32.67, 20.98, 29.67, 19.59, 11.59, 34.67, 13.38];
+var county_expenditure_edu_arr = [475.44, 637.80, 281.37, 331.93, 278.21, 452.45, 80.05, 86.23, 85.19, 164.54, 72.88, 86.60, 64.59, 109.91, 40.80, 53.52, 19.56, 47.55, 58.48, 35.85, 25.69, 7.14];
+var county_expenditure_fare_arr = [212.73, 395.48, 72.54, 133.20, 94.65, 265.49, 22.96, 26.79, 27.50, 54.01, 25.73, 38.11, 30.77, 39.58, 18.97, 20.05, 10.88, 21.35, 20.68, 11.95, 15.16, 2.19];
+var county_expenditure_retire_arr = [121.00, 49.08, 49.05, 86.21, 36.85, 54.85, 20.75, 22.95, 27.76, 47.13, 25.53, 30.46, 33.19, 44.33, 18.33, 19.27, 7.32, 17.05, 20.19, 13.64, 4.52, 0.33];
 
 // 歲入總表
-var county_expenditure_general_arr = [201.65, 128.59, 110.51, 130.47, 124.04, 50.75, 18.20, 18.96, 28.92, 30.10, 26.64, 21.63, 19.49, 32.94, 17.91, 19.80, 9.05, 22.20, 17.60, 14.26, 14.90, 4.38];
-var county_expenditure_economic_arr = [254.13, 202.63, 266.35, 119.01, 95.47, 80.95, 36.72, 38.83, 44.23, 56.77, 42.70, 45.38, 47.06, 46.01, 24.71, 34.71, 29.31, 25.70, 18.83, 12.63, 35.65, 15.67];
-var county_expenditure_edu_arr = [443.59, 631.89, 324.72, 280.49, 437.82, 242.84, 68.51, 72.44, 93.56, 155.21, 73.61, 84.88, 62.36, 112.71, 39.99, 53.02, 18.74, 46.37, 54.54, 33.55, 25.18, 6.68];
-var county_expenditure_fare_arr = [209.01, 401.19, 118.75, 94.77, 259.41, 66.75, 21.38, 26.55, 31.16, 48.48, 25.35, 38.92, 30.86, 40.33, 18.79, 18.70, 10.44, 20.80, 20.68, 11.93, 14.13, 2.20];
-var county_expenditure_retire_arr = [119.91, 48.41, 85.21, 41.98, 51.06, 51.50, 20.51, 18.92, 26.91, 43.98, 24.50, 28.10, 31.15, 40.65, 17.80, 18.97, 7.47, 16.71, 21.11, 14.48, 4.07, 0.29];
+var county_expenditure_general_arr_2013 = [201.65, 128.59, 110.51, 130.47, 124.04, 50.75, 18.20, 18.96, 28.92, 30.10, 26.64, 21.63, 19.49, 32.94, 17.91, 19.80, 9.05, 22.20, 17.60, 14.26, 14.90, 4.38];
+var county_expenditure_economic_arr_2013 = [254.13, 202.63, 266.35, 119.01, 95.47, 80.95, 36.72, 38.83, 44.23, 56.77, 42.70, 45.38, 47.06, 46.01, 24.71, 34.71, 29.31, 25.70, 18.83, 12.63, 35.65, 15.67];
+var county_expenditure_edu_arr_2013 = [443.59, 631.89, 324.72, 280.49, 437.82, 242.84, 68.51, 72.44, 93.56, 155.21, 73.61, 84.88, 62.36, 112.71, 39.99, 53.02, 18.74, 46.37, 54.54, 33.55, 25.18, 6.68];
+var county_expenditure_fare_arr_2013 = [209.01, 401.19, 118.75, 94.77, 259.41, 66.75, 21.38, 26.55, 31.16, 48.48, 25.35, 38.92, 30.86, 40.33, 18.79, 18.70, 10.44, 20.80, 20.68, 11.93, 14.13, 2.20];
+var county_expenditure_retire_arr_2013 = [119.91, 48.41, 85.21, 41.98, 51.06, 51.50, 20.51, 18.92, 26.91, 43.98, 24.50, 28.10, 31.15, 40.65, 17.80, 18.97, 7.47, 16.71, 21.11, 14.48, 4.07, 0.29];
 
 var county_expenditure_general_arr_2012 = [205.58, 127.33, 106.92, 138.92, 128.54, 48.07, 18.33, 18.75, 33.96, 29.28, 25.75, 21.54, 20.00, 35.50, 19.20, 20.30, 9.17, 23.10, 17.45, 15.18, 16.00, 4.96];
 var county_expenditure_economic_arr_2012 = [192.02, 208.32, 130.72, 114.05, 112.67, 62.42, 34.64, 50.93, 40.72, 65.24, 25.62, 44.36, 44.31, 56.17, 27.10, 28.44, 26.53, 24.99, 22.60, 12.30, 35.80, 13.14];
@@ -19,11 +27,12 @@ var county_expenditure_edu_arr_2011 = [391.61, 580.97, 323.06, 265.16, 440.63, 2
 var county_expenditure_fare_arr_2011 = [314.06, 435.19, 173.35, 162.98, 248.39, 108.85, 23.67, 21.69, 27.49, 47.61, 24.44, 36.18, 29.37, 40.11, 17.64, 17.04, 10.87, 20.90, 15.10, 9.75, 12.88, 2.18];
 var county_expenditure_retire_arr_2011 = [118.62, 49.62, 82.83, 39.06, 51.12, 47.83, 20.67, 5.41, 24.45, 43.56, 25.73, 28.58, 23.81, 47.17, 16.59, 19.06, 6.98, 16.77, 19.94, 13.94, 3.92, 0.26];
 
-
-var county_expenditure = [1467.54, 1695.80, 1095.38, 779.17, 1220.72, 577.36, 197.79, 201.70, 269.42, 388.93, 222.84, 255.71, 219.47, 315.69, 139.34, 169.58, 90.56, 160.68, 162.06, 105.55, 108.33, 32.27];
+var county_expenditure = [1544.73, 1675.04, 627.60, 1048.69, 735.21, 1262.66, 197.72, 231.50, 264.56, 412.05, 216.92, 266.32, 219.10, 310.58, 142.13, 170.91, 83.76, 166.66, 168.48, 106.41, 114.12, 30.31];
+var county_expenditure_2013 = [1467.54, 1695.80, 1095.38, 779.17, 1220.72, 577.36, 197.79, 201.70, 269.42, 388.93, 222.84, 255.71, 219.47, 315.69, 139.34, 169.58, 90.56, 160.68, 162.06, 105.55, 108.33, 32.27];
 var county_expenditure_2012 = [1498.67, 1760.75, 998.83, 825.84, 1248.90, 580.94, 192.96, 222.90, 279.35, 394.75, 216.28, 247.35, 219.79, 328.27, 142.09, 163.67, 87.47, 162.19, 163.59, 103.65, 105.21, 30.72];
 var county_expenditure_2011 = [1458.99, 1730.32, 968.87, 775.79, 1267.12, 571.75, 204.52, 230.42, 264.66, 365.77, 210.31, 251.14, 214.44, 359.91, 141.07, 165.37, 83.97, 176.10, 154.91, 112.35, 121.22, 33.91];
 var county_expenditure_retireOthers_arr = [];
+var county_expenditure_retireOthers_arr_2013 = [];
 var county_expenditure_retireOthers_arr_2012 = [];
 var county_expenditure_retireOthers_arr_2011 = [];
 
@@ -33,6 +42,13 @@ county_expenditure.forEach(function(val, idx, arr) {
         county_expenditure_retireOthers_arr.push(others);
     else
         county_expenditure_retireOthers_arr.push(0);
+});
+county_expenditure_2013.forEach(function(val, idx, arr) {
+    var others = val - county_expenditure_general_arr_2013[idx] - county_expenditure_economic_arr_2013[idx] - county_expenditure_edu_arr_2013[idx] - county_expenditure_fare_arr_2013[idx];
+    if (others >= 0)
+        county_expenditure_retireOthers_arr_2013.push(others);
+    else
+        county_expenditure_retireOthers_arr_2013.push(0);
 });
 county_expenditure_2012.forEach(function(val, idx, arr) {
     var others = val - county_expenditure_general_arr_2012[idx] - county_expenditure_economic_arr_2012[idx] - county_expenditure_edu_arr_2012[idx] - county_expenditure_fare_arr_2012[idx];
@@ -60,7 +76,7 @@ var county_revenue_budget_arr_2011 = [1552.00, 1796.00, 1054.00, 841.00, 1349.00
 var svgns = "http://www.w3.org/2000/svg";
 var xlinkns = "http://www.w3.org/1999/xlink";
 
-function generateExpenditureChart(chartId, lineId, array1, array2, array3, array4, array5) {
+function generateExpenditureChart(chartId, lineId, array1, array2, array3, array4, array5, countyNameArr) {
     var chart_2013 = document.getElementById(chartId);
     var line_2013 = document.getElementById(lineId);
     var num_grade = getHeadAndInterval_inputMultipleArray(array1, array2, array3, array4, array5).head;
@@ -150,7 +166,7 @@ function generateExpenditureChart(chartId, lineId, array1, array2, array3, array
         tns.setAttribute("style", txt_sty_str);
         tns.setAttribute("class", 'rect' + i);
         tns.setAttribute("id", 'county_tag');
-        tns.textContent = county_name[i];
+        tns.textContent = countyNameArr[i];
         chart_2013.appendChild(tns);
     }
     // } else if (screen.width < 500) {
@@ -312,10 +328,11 @@ function generateExpenditureChart(chartId, lineId, array1, array2, array3, array
 
 
 
+generateExpenditureChart('chart_2014', 'line_2014', county_expenditure_general_arr, county_expenditure_economic_arr, county_expenditure_edu_arr, county_expenditure_fare_arr, county_expenditure_retireOthers_arr, county_name);
 
-generateExpenditureChart('chart_2013', 'line_2013', county_expenditure_general_arr, county_expenditure_economic_arr, county_expenditure_edu_arr, county_expenditure_fare_arr, county_expenditure_retireOthers_arr);
-generateExpenditureChart('chart_2012', 'line_2012', county_expenditure_general_arr_2012, county_expenditure_economic_arr_2012, county_expenditure_edu_arr_2012, county_expenditure_fare_arr_2012, county_expenditure_retireOthers_arr_2012);
-generateExpenditureChart('chart_2011', 'line_2011', county_expenditure_general_arr_2011, county_expenditure_economic_arr_2011, county_expenditure_edu_arr_2011, county_expenditure_fare_arr_2011, county_expenditure_retireOthers_arr_2011);
+generateExpenditureChart('chart_2013', 'line_2013', county_expenditure_general_arr_2013, county_expenditure_economic_arr_2013, county_expenditure_edu_arr_2013, county_expenditure_fare_arr_2013, county_expenditure_retireOthers_arr_2013, county_name_before_2014);
+generateExpenditureChart('chart_2012', 'line_2012', county_expenditure_general_arr_2012, county_expenditure_economic_arr_2012, county_expenditure_edu_arr_2012, county_expenditure_fare_arr_2012, county_expenditure_retireOthers_arr_2012, county_name_before_2014);
+generateExpenditureChart('chart_2011', 'line_2011', county_expenditure_general_arr_2011, county_expenditure_economic_arr_2011, county_expenditure_edu_arr_2011, county_expenditure_fare_arr_2011, county_expenditure_retireOthers_arr_2011, county_name_before_2014);
 
 
 ////
@@ -336,14 +353,23 @@ $(document).ready(function() {
         // var box_left = chart_div_width / 4 + rect_x;
         var box_left = rect_x + 40;
         // console.log(box_top + " " + box_left);
+        $('#box_2014').css('top', box_top);
+        $('#box_2014').css('left', box_left);
+        $('#box_2014 > p:nth-child(2) > map').text(Math.round(county_expenditure_retireOthers_arr[rect_index]));
+        $('#box_2014 > p:nth-child(4) > map').text(Math.round(county_expenditure_fare_arr[rect_index]));
+        $('#box_2014 > p:nth-child(6) > map').text(Math.round(county_expenditure_edu_arr[rect_index]));
+        $('#box_2014 > p:nth-child(8) > map').text(Math.round(county_expenditure_economic_arr[rect_index]));
+        $('#box_2014 > p:nth-child(10) > map').text(Math.round(county_expenditure_general_arr[rect_index]));
+        $("." + rect_class).css('opacity', 0.7);
+        $('#box_2014').css('visibility', 'visible');
+
         $('#box_2013').css('top', box_top);
         $('#box_2013').css('left', box_left);
-        $('#box_2013 > p:nth-child(2) > map').text(Math.round(county_expenditure_retireOthers_arr[rect_index]));
-        $('#box_2013 > p:nth-child(4) > map').text(Math.round(county_expenditure_fare_arr[rect_index]));
-        $('#box_2013 > p:nth-child(6) > map').text(Math.round(county_expenditure_edu_arr[rect_index]));
-        $('#box_2013 > p:nth-child(8) > map').text(Math.round(county_expenditure_economic_arr[rect_index]));
-        $('#box_2013 > p:nth-child(10) > map').text(Math.round(county_expenditure_general_arr[rect_index]));
-
+        $('#box_2013 > p:nth-child(2) > map').text(Math.round(county_expenditure_retireOthers_arr_2013[rect_index]));
+        $('#box_2013 > p:nth-child(4) > map').text(Math.round(county_expenditure_fare_arr_2013[rect_index]));
+        $('#box_2013 > p:nth-child(6) > map').text(Math.round(county_expenditure_edu_arr_2013[rect_index]));
+        $('#box_2013 > p:nth-child(8) > map').text(Math.round(county_expenditure_economic_arr_2013[rect_index]));
+        $('#box_2013 > p:nth-child(10) > map').text(Math.round(county_expenditure_general_arr_2013[rect_index]));
         $("." + rect_class).css('opacity', 0.7);
         $('#box_2013').css('visibility', 'visible');
 
@@ -370,6 +396,8 @@ $(document).ready(function() {
     }).mouseout(function() {
         var rect_class = $(this).attr('class');
         $("." + rect_class).css('opacity', 1);
+        $('#box_2014').css('visibility', 'hidden');
+
         $('#box_2013').css('visibility', 'hidden');
 
         $('#box_2012').css('visibility', 'hidden');

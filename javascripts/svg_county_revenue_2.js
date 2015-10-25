@@ -1,8 +1,12 @@
-var county_name = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+var county_name = ['新北市', '台北市', '桃園市', '台中市', '台南市', '高雄市', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
+var county_name_before_2014 = ['新北市', '台北市', '台中市', '台南市', '高雄市', '桃園縣', '宜蘭縣', '新竹縣', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '屏東縣', '台東縣', '花蓮縣', '澎湖縣', '基隆市', '新竹市', '嘉義市', '金門縣', '連江縣'];
 
 // 預決算數比較
-var county_revenue_decided_arr = [1372, 1601, 1025, 735, 1121, 613, 205, 207, 224, 376, 229, 248, 217, 314, 135, 178, 85, 168, 172, 114, 132, 33];
-var county_revenue_budget_arr = [1337, 1567, 1056, 834, 1129, 591, 206, 246, 289, 362, 249, 287, 239, 325, 135, 182, 85, 173, 180, 116, 132, 34];
+var county_revenue_decided_arr = [1426, 1887, 567, 999, 716, 1164, 195, 221, 224, 399, 238, 260, 215, 318, 138, 170, 80, 167, 169, 111, 124, 31];
+var county_revenue_budget_arr = [1375, 1653, 592, 962, 739, 1174, 195, 238, 332, 400, 240, 279, 235, 330, 137, 178, 78, 171, 179, 111, 127, 32];
+
+var county_revenue_decided_arr_2013 = [1372, 1601, 1025, 735, 1121, 613, 205, 207, 224, 376, 229, 248, 217, 314, 135, 178, 85, 168, 172, 114, 132, 33];
+var county_revenue_budget_arr_2013 = [1337, 1567, 1056, 834, 1129, 591, 206, 246, 289, 362, 249, 287, 239, 325, 135, 182, 85, 173, 180, 116, 132, 34];
 var county_revenue_decided_arr_2012 = [1347, 1611, 952, 776, 1038, 625, 200, 227, 222, 362, 216, 240, 211, 324, 135, 175, 80, 165, 168, 106, 135, 31];
 var county_revenue_budget_arr_2012 = [1387, 1637, 1010, 837, 1152, 607, 201, 258, 339, 366, 228, 272, 229, 337, 138, 177, 81, 181, 182, 108, 122, 32];
 var county_revenue_decided_arr_2011 = [1428, 1641, 910, 716, 1128, 581, 204, 228, 218, 336, 220, 246, 216, 344, 140, 162, 79, 170, 157, 115, 123, 33];
@@ -11,7 +15,7 @@ var county_revenue_budget_arr_2011 = [1406, 1589, 923, 792, 1183, 578, 216, 272,
 var svgns = "http://www.w3.org/2000/svg";
 var xlinkns = "http://www.w3.org/1999/xlink";
 
-function generateChart(chartId, lineId, array1, array2) {
+function generateChart(chartId, lineId, array1, array2,countyNameArr) {
     var chart_2013 = document.getElementById(chartId);
     var line_2013 = document.getElementById(lineId);
     if (Math.max.apply(null, array1) >= Math.max.apply(null, array2)) {
@@ -89,7 +93,7 @@ function generateChart(chartId, lineId, array1, array2) {
         tns.setAttribute("style", txt_sty_str);
         tns.setAttribute("class", 'rect' + i);
         tns.setAttribute("id", 'county_tag');
-        tns.textContent = county_name[i];
+        tns.textContent = countyNameArr[i];
         chart_2013.appendChild(tns);
     }
 }
@@ -98,11 +102,11 @@ function generateChart(chartId, lineId, array1, array2) {
 
 
 
+generateChart('chart_2014_2', 'line_2014_2', county_revenue_budget_arr, county_revenue_decided_arr,county_name);
 
-
-generateChart('chart_2013_2', 'line_2013_2', county_revenue_budget_arr, county_revenue_decided_arr);
-generateChart('chart_2012_2', 'line_2012_2', county_revenue_budget_arr_2012, county_revenue_decided_arr_2012);
-generateChart('chart_2011_2', 'line_2011_2', county_revenue_budget_arr_2011, county_revenue_decided_arr_2011);
+generateChart('chart_2013_2', 'line_2013_2', county_revenue_budget_arr_2013, county_revenue_decided_arr_2013,county_name_before_2014);
+generateChart('chart_2012_2', 'line_2012_2', county_revenue_budget_arr_2012, county_revenue_decided_arr_2012,county_name_before_2014);
+generateChart('chart_2011_2', 'line_2011_2', county_revenue_budget_arr_2011, county_revenue_decided_arr_2011,county_name_before_2014);
 ////
 $(document).ready(function() {
     var chart_div_height = parseFloat($('#chart_svg').attr('height'));
@@ -121,6 +125,14 @@ $(document).ready(function() {
         // var box_left = chart_div_width / 4 + rect_x;
         var box_left = rect_x + 40;
         // console.log(box_top + " " + box_left);
+        $('#box_2_2014').css('top', box_top);
+        $('#box_2_2014').css('left', box_left);
+        $('#box_2_2014 > p:nth-child(2) > map').text(Math.round(county_revenue_decided_arr[rect_index]));
+        $('#box_2_2014 > p:nth-child(4) > map').text(Math.round(county_revenue_budget_arr[rect_index]));
+        $("." + rect_class).css('opacity', 0.7);
+        $('#box_2_2014').css('visibility', 'visible');
+
+
         $('#box_2_2013').css('top', box_top);
         $('#box_2_2013').css('left', box_left);
         $('#box_2_2013 > p:nth-child(2) > map').text(Math.round(county_revenue_decided_arr[rect_index]));
@@ -145,6 +157,8 @@ $(document).ready(function() {
     }).mouseout(function() {
         var rect_class = $(this).attr('class');
         $("." + rect_class).css('opacity', 1);
+        $('#box_2_2014').css('visibility', 'hidden');
+
         $('#box_2_2013').css('visibility', 'hidden');
 
         $('#box_2_2012').css('visibility', 'hidden');
