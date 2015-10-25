@@ -40,9 +40,9 @@ county_revenue_self_raised_arr_2.forEach(function(val, idx, arr) {
 county_revenue_self_raised_arr_2_2013.forEach(function(val, idx, arr) {
     var others = val - county_revenue_land_arr_2013[idx] - county_revenue_landRise_arr_2013[idx] - county_revenue_house_arr_2013[idx];
     if (others >= 0)
-        county_revenue_self_others_arr.push(others);
+        county_revenue_self_others_arr_2013.push(others);
     else
-        county_revenue_self_others_arr.push(0);
+        county_revenue_self_others_arr_2013.push(0);
 });
 county_revenue_self_raised_arr_2_2012.forEach(function(val, idx, arr) {
     var others = val - county_revenue_land_arr_2012[idx] - county_revenue_landRise_arr_2012[idx] - county_revenue_house_arr_2012[idx];
