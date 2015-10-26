@@ -65,11 +65,11 @@ county_revenue_self_raised_arr_2_2011.forEach(function(val, idx, arr) {
 var svgns = "http://www.w3.org/2000/svg";
 var xlinkns = "http://www.w3.org/1999/xlink";
 
-function generateChart(chartId, lineId, array1, array2, array3, array4, countyNameArr) {
+function generateChart(chartId, lineId, array1, array2, array3, countyNameArr) {
     var chart_2013 = document.getElementById(chartId);
     var line_2013 = document.getElementById(lineId);
-    var num_grade = getHeadAndInterval_inputMultipleArray(array1, array2, array3, array4).head;
-    var debt_distance = getHeadAndInterval_inputMultipleArray(array1, array2, array3, array4).interval;
+    var num_grade = getHeadAndInterval_inputMultipleArray(array1, array2, array3).head;
+    var debt_distance = getHeadAndInterval_inputMultipleArray(array1, array2, array3).interval;
 
     // console.log(num_grade + " " + debt_distance);
     var h_h = parseFloat($('#chart_svg').attr('height'));
@@ -109,7 +109,7 @@ function generateChart(chartId, lineId, array1, array2, array3, array4, countyNa
     line_2013.appendChild(unitns);
 
     for (var i = 0; i < county_revenue_land_arr.length; i++) {
-        var value = [array1[i], array2[i], array3[i], array4[i]];
+        var value = [array1[i], array2[i], array3[i]];
         value.forEach(function(_value, index, array) {
             array[index] = array[index] * chart_part_height_unit;
         });
@@ -155,12 +155,12 @@ function generateChart(chartId, lineId, array1, array2, array3, array4, countyNa
 
 
 
-generateChart('chart_2014_3', 'line_2014_3', county_revenue_house_arr, county_revenue_land_arr, county_revenue_landRise_arr, county_revenue_self_others_arr, county_name);
+generateChart('chart_2014_3', 'line_2014_3', county_revenue_house_arr, county_revenue_land_arr, county_revenue_landRise_arr, county_name);
 
 
-generateChart('chart_2013_3', 'line_2013_3', county_revenue_house_arr_2013, county_revenue_land_arr_2013, county_revenue_landRise_arr_2013, county_revenue_self_others_arr_2013, county_name_before_2014);
-generateChart('chart_2012_3', 'line_2012_3', county_revenue_house_arr_2012, county_revenue_land_arr_2012, county_revenue_landRise_arr_2012, county_revenue_self_others_arr_2012, county_name_before_2014);
-generateChart('chart_2011_3', 'line_2011_3', county_revenue_house_arr_2011, county_revenue_land_arr_2011, county_revenue_landRise_arr_2011, county_revenue_self_others_arr_2011, county_name_before_2014);
+generateChart('chart_2013_3', 'line_2013_3', county_revenue_house_arr_2013, county_revenue_land_arr_2013, county_revenue_landRise_arr_2013, county_name_before_2014);
+generateChart('chart_2012_3', 'line_2012_3', county_revenue_house_arr_2012, county_revenue_land_arr_2012, county_revenue_landRise_arr_2012, county_name_before_2014);
+generateChart('chart_2011_3', 'line_2011_3', county_revenue_house_arr_2011, county_revenue_land_arr_2011, county_revenue_landRise_arr_2011, county_name_before_2014);
 
 $(document).ready(function() {
     var chart_div_height = parseFloat($('#chart_svg').attr('height'));
@@ -181,38 +181,58 @@ $(document).ready(function() {
         // console.log(box_top + " " + box_left);
         $('#box_3_2014').css('top', box_top);
         $('#box_3_2014').css('left', box_left);
-        $('#box_3_2014 > p:nth-child(2) > map').text((county_revenue_self_others_arr[rect_index].toFixed(1)));
-        $('#box_3_2014 > p:nth-child(4) > map').text(Math.round(county_revenue_landRise_arr[rect_index]));
-        $('#box_3_2014 > p:nth-child(6) > map').text(Math.round(county_revenue_land_arr[rect_index]));
-        $('#box_3_2014 > p:nth-child(8) > map').text(Math.round(county_revenue_house_arr[rect_index]));
+        // $('#box_3_2014 > p:nth-child(2) > map').text((county_revenue_self_others_arr[rect_index].toFixed(1)));
+        // $('#box_3_2014 > p:nth-child(4) > map').text(Math.round(county_revenue_landRise_arr[rect_index]));
+        // $('#box_3_2014 > p:nth-child(6) > map').text(Math.round(county_revenue_land_arr[rect_index]));
+        // $('#box_3_2014 > p:nth-child(8) > map').text(Math.round(county_revenue_house_arr[rect_index]));
+
+        $('#box_3_2014 > p:nth-child(2) > map').text(Math.round(county_revenue_landRise_arr[rect_index]));
+        $('#box_3_2014 > p:nth-child(4) > map').text(Math.round(county_revenue_land_arr[rect_index]));
+        $('#box_3_2014 > p:nth-child(6) > map').text(Math.round(county_revenue_house_arr[rect_index]));
+
         $("." + rect_class).css('opacity', 0.7);
         $('#box_3_2014').css('visibility', 'visible');
 
 
         $('#box_3_2013').css('top', box_top);
         $('#box_3_2013').css('left', box_left);
-        $('#box_3_2013 > p:nth-child(2) > map').text((county_revenue_self_others_arr_2013[rect_index].toFixed(1)));
-        $('#box_3_2013 > p:nth-child(4) > map').text(Math.round(county_revenue_landRise_arr_2013[rect_index]));
-        $('#box_3_2013 > p:nth-child(6) > map').text(Math.round(county_revenue_land_arr_2013[rect_index]));
-        $('#box_3_2013 > p:nth-child(8) > map').text(Math.round(county_revenue_house_arr_2013[rect_index]));
+        // $('#box_3_2013 > p:nth-child(2) > map').text((county_revenue_self_others_arr_2013[rect_index].toFixed(1)));
+        // $('#box_3_2013 > p:nth-child(4) > map').text(Math.round(county_revenue_landRise_arr_2013[rect_index]));
+        // $('#box_3_2013 > p:nth-child(6) > map').text(Math.round(county_revenue_land_arr_2013[rect_index]));
+        // $('#box_3_2013 > p:nth-child(8) > map').text(Math.round(county_revenue_house_arr_2013[rect_index]));
+
+        $('#box_3_2013 > p:nth-child(2) > map').text(Math.round(county_revenue_landRise_arr_2013[rect_index]));
+        $('#box_3_2013 > p:nth-child(4) > map').text(Math.round(county_revenue_land_arr_2013[rect_index]));
+        $('#box_3_2013 > p:nth-child(6) > map').text(Math.round(county_revenue_house_arr_2013[rect_index]));
+
         $("." + rect_class).css('opacity', 0.7);
         $('#box_3_2013').css('visibility', 'visible');
 
         $('#box_3_2012').css('top', box_top);
         $('#box_3_2012').css('left', box_left);
-        $('#box_3_2012 > p:nth-child(2) > map').text((county_revenue_self_others_arr_2012[rect_index].toFixed(1)));
-        $('#box_3_2012 > p:nth-child(4) > map').text(Math.round(county_revenue_landRise_arr_2012[rect_index]));
-        $('#box_3_2012 > p:nth-child(6) > map').text(Math.round(county_revenue_land_arr_2012[rect_index]));
-        $('#box_3_2012 > p:nth-child(8) > map').text(Math.round(county_revenue_house_arr_2012[rect_index]));
+        // $('#box_3_2012 > p:nth-child(2) > map').text((county_revenue_self_others_arr_2012[rect_index].toFixed(1)));
+        // $('#box_3_2012 > p:nth-child(4) > map').text(Math.round(county_revenue_landRise_arr_2012[rect_index]));
+        // $('#box_3_2012 > p:nth-child(6) > map').text(Math.round(county_revenue_land_arr_2012[rect_index]));
+        // $('#box_3_2012 > p:nth-child(8) > map').text(Math.round(county_revenue_house_arr_2012[rect_index]));
+
+        $('#box_3_2012 > p:nth-child(2) > map').text(Math.round(county_revenue_landRise_arr_2012[rect_index]));
+        $('#box_3_2012 > p:nth-child(4) > map').text(Math.round(county_revenue_land_arr_2012[rect_index]));
+        $('#box_3_2012 > p:nth-child(6) > map').text(Math.round(county_revenue_house_arr_2012[rect_index]));
+
         $("." + rect_class).css('opacity', 0.7);
         $('#box_3_2012').css('visibility', 'visible');
 
         $('#box_3_2011').css('top', box_top);
         $('#box_3_2011').css('left', box_left);
-        $('#box_3_2011 > p:nth-child(2) > map').text((county_revenue_self_others_arr_2011[rect_index].toFixed(1)));
-        $('#box_3_2011 > p:nth-child(4) > map').text(Math.round(county_revenue_landRise_arr_2011[rect_index]));
-        $('#box_3_2011 > p:nth-child(6) > map').text(Math.round(county_revenue_land_arr_2011[rect_index]));
-        $('#box_3_2011 > p:nth-child(8) > map').text(Math.round(county_revenue_house_arr_2011[rect_index]));
+        // $('#box_3_2011 > p:nth-child(2) > map').text((county_revenue_self_others_arr_2011[rect_index].toFixed(1)));
+        // $('#box_3_2011 > p:nth-child(4) > map').text(Math.round(county_revenue_landRise_arr_2011[rect_index]));
+        // $('#box_3_2011 > p:nth-child(6) > map').text(Math.round(county_revenue_land_arr_2011[rect_index]));
+        // $('#box_3_2011 > p:nth-child(8) > map').text(Math.round(county_revenue_house_arr_2011[rect_index]));
+
+        $('#box_3_2011 > p:nth-child(2) > map').text(Math.round(county_revenue_landRise_arr_2011[rect_index]));
+        $('#box_3_2011 > p:nth-child(4) > map').text(Math.round(county_revenue_land_arr_2011[rect_index]));
+        $('#box_3_2011 > p:nth-child(6) > map').text(Math.round(county_revenue_house_arr_2011[rect_index]));
+
         $("." + rect_class).css('opacity', 0.7);
         $('#box_3_2011').css('visibility', 'visible');
 
