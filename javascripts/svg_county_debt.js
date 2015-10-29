@@ -116,7 +116,7 @@ function generateDebtChart(chartId, lineId, array1, array2, countyNameArr) {
 
 
 
-generateDebtChart('chart_2014', 'line_2014', county_public_debt_arr, county_hidden_debt_arr,county_name);
+// generateDebtChart('chart_2014', 'line_2014', county_public_debt_arr, county_hidden_debt_arr,county_name);
 generateDebtChart('chart_2013', 'line_2013', county_public_debt_arr_2013, county_hidden_debt_arr_2013, county_name_before_2014);
 generateDebtChart('chart_2012', 'line_2012', county_public_debt_arr_2012, county_hidden_debt_arr_2012, county_name_before_2014);
 generateDebtChart('chart_2011', 'line_2011', county_public_debt_arr_2011, county_hidden_debt_arr_2011, county_name_before_2014);
