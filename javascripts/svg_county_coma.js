@@ -29,15 +29,15 @@ var svgns = "http://www.w3.org/2000/svg";
 var xlinkns = "http://www.w3.org/1999/xlink";
 var coma_tag_name = ['腦死區', '重度葉克膜區', '中重度插管區', '中度加護病房', '普通病房', '追蹤觀察'];
 
-function generateComaChart(chartId, rectId, lineId, year_coma_array,countyNameArr) {
+function generateComaChart(chartId, rectId, lineId, year_coma_array, countyNameArr) {
     var chartAnchor = document.getElementById(chartId);
     var rect_2013 = document.getElementById(rectId);
     var line_2013 = document.getElementById(lineId);
 
     var year_coma_array_modified = [];
-    year_coma_array.forEach(function(val,idx,arr) {
-      if(val<6) year_coma_array_modified.push(val);
-      else year_coma_array_modified.push(5.99);
+    year_coma_array.forEach(function(val, idx, arr) {
+        if (val < 5.5) year_coma_array_modified.push(val);
+        else year_coma_array_modified.push(5.5);
     });
 
     var num_grade = coma_getHeadAndInterval_inputMultipleArray(year_coma_array_modified).head;
@@ -164,18 +164,29 @@ function generateComaChart(chartId, rectId, lineId, year_coma_array,countyNameAr
 
     for (var i = 0; i < year_coma_array.length; i++) {
         var val;
+        console.log(debt_distance);
+        var test = year_coma_array_modified[i] - 5 * debt_distance; //全部減去2.5，從2.5開始往上一個區間0.5作表
+        //console.log(test);
+        // if (test >= 0 || test < 0.5) {
+        //     val = (test - 4 * debt_distance + 2 * 4 * debt_distance) * chart_part_height_unit;
+        // } else if (test >= 0.5 || test < 1) {
+        //     val = (test - 3 * debt_distance + 2 * 3 * debt_distance) * chart_part_height_unit;
+        // } else if (test >= 1 || test < 1.5) {
+        //     val = (test - 2 * debt_distance + 2 * 2 * debt_distance) * chart_part_height_unit;
+        // } else if (test >= 1.5 || test < 2) {
+        //     val = (test - 1 * debt_distance + 2 * 1 * debt_distance) * chart_part_height_unit;
+        // } else {}
 
-        var test = year_coma_array_modified[i] - 4 * debt_distance;
-        if (test >= 2.5 || test < 3) {
-            val = (year_coma_array_modified[i] - 4 * debt_distance - 4 * debt_distance + 2 * 4 * debt_distance) * chart_part_height_unit;
-        } else if (test >= 2.0 || test < 2.5) {
-            val = (year_coma_array_modified[i] - 4 * debt_distance - 3 * debt_distance + 2 * 3 * debt_distance) * chart_part_height_unit;
+        if (test >= 0 || test < 0.5) {
+            val = (test * 4 * debt_distance) * chart_part_height_unit;
+        } else if (test >= 0.5 || test < 1) {
+            val = (test * 4 * debt_distance) * chart_part_height_unit;
+        } else if (test >= 1 || test < 1.5) {
+            val = (test * 4 * debt_distance) * chart_part_height_unit;
         } else if (test >= 1.5 || test < 2) {
-            val = (year_coma_array_modified[i] - 4 * debt_distance - 2 * debt_distance + 2 * 2 * debt_distance) * chart_part_height_unit;
-        } else if (test >= 1.0 || test < 1.5) {
-            val = (year_coma_array_modified[i] - 4 * debt_distance - 1 * debt_distance + 2 * 1 * debt_distance) * chart_part_height_unit;
+            val = (test * 4 * debt_distance) * chart_part_height_unit;
         } else {}
-        console.log(val);
+        //console.log(val);
 
         var h = chart_part_height + 30 - val - 1 * debt_distance * chart_part_height_unit;
 
@@ -214,10 +225,10 @@ function generateComaChart(chartId, rectId, lineId, year_coma_array,countyNameAr
 
 
 
-generateComaChart('chart_2014', 'rect_2014', 'line_2014', county_coma_arr,county_name);
-generateComaChart('chart_2013', 'rect_2013', 'line_2013', county_coma_arr_2013,county_name_before_2014);
-generateComaChart('chart_2012', 'rect_2012', 'line_2012', county_coma_arr_2012,county_name_before_2014);
-generateComaChart('chart_2011', 'rect_2011', 'line_2011', county_coma_arr_2011,county_name_before_2014);
+generateComaChart('chart_2014', 'rect_2014', 'line_2014', county_coma_arr, county_name);
+generateComaChart('chart_2013', 'rect_2013', 'line_2013', county_coma_arr_2013, county_name_before_2014);
+generateComaChart('chart_2012', 'rect_2012', 'line_2012', county_coma_arr_2012, county_name_before_2014);
+generateComaChart('chart_2011', 'rect_2011', 'line_2011', county_coma_arr_2011, county_name_before_2014);
 
 $(document).ready(function() {
     var chart_div_height = parseFloat($('#chart_svg').attr('height'));
