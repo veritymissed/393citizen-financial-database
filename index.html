@@ -7,7 +7,7 @@
     <title>393公民平台-各縣市政府財政資料查詢</title>
     <meta name="description" content="393公民平台 - 各縣市政府財政資料查詢 - 在政見兌現和施政績效的壓力下，地方財政困窘、債台高築是各縣市首長面臨的一大挑戰，如何開源節流、增加地方建設及服務，在在考驗著各縣市首長的智慧。" />
     <meta name="keywords" content="393 CITIZEN,參玖參公民平台,393公民平台,公共債務,歲入,自籌財源,歲出,社會福利,赤字,財政昏迷指數,稅賦改革建議書,財政健全方案" />
-    <meta name="og:description" content="依據政府決算資料，393公民平台整理出全臺各縣市政府的重要財政數據，包括人口、債務、收入、支出、財政昏迷指數，共五大類，便於大家查詢2011年~2013年，各縣市的財政狀況，了解縣市的主要收入有哪些？主要支出於什麼部分？收入夠不夠對應支出？" />
+    <meta name="og:description" content="依據政府決算資料，393公民平台整理出全臺各縣市政府的重要財政數據，包括人口、債務、收入、支出、財政昏迷指數，共五大類，便於大家查詢2011年~2014年，各縣市的財政狀況，了解縣市的主要收入有哪些？主要支出於什麼部分？收入夠不夠對應支出？" />
     <meta property="og:title" content="393公民平台-各縣市政府財政資料查詢" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://event.393citizen.com/finance_data/index.html" />
@@ -92,12 +92,12 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <!-- <a href="http://event.393citizen.com/finance_data/">
-                  <p class="text-center font_white font_weight_800 font_2_em">台灣各縣市政府財政資料查詢</p>
-              </a> -->
-              <a href="http://event.393citizen.com/financial_test/">
+              <a href="http://event.393citizen.com/finance_data/">
                   <p class="text-center font_white font_weight_800 font_2_em">台灣各縣市政府財政資料查詢</p>
               </a>
+              <!-- <a href="http://event.393citizen.com/financial_test/">
+                  <p class="text-center font_white font_weight_800 font_2_em">台灣各縣市政府財政資料查詢</p>
+              </a> -->
             </div>
         </div>
     </div>
@@ -491,8 +491,8 @@
             var select_index = yearArray.indexOf(year_selected_user);
             // window.location.assign('/county-' + item_selected_user + '.html?year=' + year_selected_user);
             // window.location.assign(window.location.origin + '/financial_test/county-' + item_selected_user + '.html?year=' + year_selected_user);
-             window.location.assign(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + '/financial_test/county-' + item_selected_user + '.html?year=' + year_selected_user);
-            //window.location.assign(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + '/finance_data/county-' + item_selected_user + '.html?year=' + year_selected_user);
+            // window.location.assign(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + '/financial_test/county-' + item_selected_user + '.html?year=' + year_selected_user);
+            window.location.assign(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + '/finance_data/county-' + item_selected_user + '.html?year=' + year_selected_user);
         } else {
             alert("請輸入完整選項");
         }
