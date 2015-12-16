@@ -3,7 +3,7 @@ var county_name_before_2014 = ['新北市', '台北市', '台中市', '台南市
 
 
 var county_public_debt_arr = [1100.50, 2169.99, 262.00, 856.81, 721.29, 2448.04, 231.54, 227.90, 398.10, 238.53, 167.42, 266.00, 212.22, 278.82, 72.53, 124.12, 22.20, 124.29, 130.55, 10.51, 0.00];
-var county_hidden_debt_arr = [];
+var county_hidden_debt_arr = [590.45,1503.25,173.81,202.37,249.53,786.94,17.33,125.95,162.02,90.69,15.72,51.30,15.14,1.18,23.25,9.86,8.31,4.78,39.95,7.41,0.00,0.00];
 
 var county_public_debt_arr_2013 = [891.86, 2359.43, 737.99, 651.38, 2352.35, 258.75, 234.59, 210.55, 401.59, 236.47, 178.97, 255.42, 212.68, 277.1, 74.62, 124.06, 21.75, 117.33, 127.16, 19.35, 0, 0];
 var county_hidden_debt_arr_2013 = [116.9243, 1465.0582, 23.155, 106.0264, 666.611, 132.3762, 23.8551, 117.0158, 89.8421, 82.0268, 15.5245, 42.312, 23.9179, 11.3216, 16.5472, 8.9532, 6.1512, 0.9915, 46.494, 3.7637, 0, 0];
@@ -116,7 +116,7 @@ function generateDebtChart(chartId, lineId, array1, array2, countyNameArr) {
 
 
 
-// generateDebtChart('chart_2014', 'line_2014', county_public_debt_arr, county_hidden_debt_arr,county_name);
+generateDebtChart('chart_2014', 'line_2014', county_public_debt_arr, county_hidden_debt_arr,county_name);
 generateDebtChart('chart_2013', 'line_2013', county_public_debt_arr_2013, county_hidden_debt_arr_2013, county_name_before_2014);
 generateDebtChart('chart_2012', 'line_2012', county_public_debt_arr_2012, county_hidden_debt_arr_2012, county_name_before_2014);
 generateDebtChart('chart_2011', 'line_2011', county_public_debt_arr_2011, county_hidden_debt_arr_2011, county_name_before_2014);

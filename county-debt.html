@@ -136,7 +136,7 @@
             <h3 class="font_weight_800 text-center year_area" style="display: none">2011年度</h3>
             <h3 class="font_weight_800 text-center year_area" style="display: none">2012年度</h3>
             <h3 class="font_weight_800 text-center year_area" style="display: none">2013年度</h3>
-            <h3 class="font_weight_800 text-center year_area">2014年度(暫無資料)</h3>
+            <h3 class="font_weight_800 text-center year_area">2014年度</h3>
             <hr style="width: 140px;display: inline-block;border-color: #3c566a;border-width: 1px; border-style: groove;margin:0px 8px 10px 8px;">
         </div>
         <div class="row font_red text-center">
@@ -287,12 +287,12 @@
         console.log(year_selected_user);
 
         var chart_title = document.getElementsByClassName('chart_div')[0];
-        document.getElementById('select_1').value = '2013';
+        document.getElementById('select_1').value = '2014';
         document.getElementById('select_3').value = 'debt';
 
         queryYear(year_selected_user);
         if (urlSearch == '') {
-            queryYear('2013');
+            queryYear('2014');
         }
     }
 
